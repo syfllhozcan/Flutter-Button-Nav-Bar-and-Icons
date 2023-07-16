@@ -645,6 +645,7 @@ class Discovery extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
+               /*
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -941,6 +942,7 @@ class Discovery extends StatelessWidget {
                   height: 40,
                 ),
                 // Image.asset("assets/images/logo2.jpg", fit: BoxFit.cover),
+                */
                 const SizedBox(
                   height: 70,
                 ),
