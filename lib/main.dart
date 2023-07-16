@@ -1,5 +1,5 @@
 
-import 'package:button_nav_bar/pages/root.dart';
+import 'package:button_nav_bar/ui/root.dart';
 import 'package:flutter/material.dart';
 
 

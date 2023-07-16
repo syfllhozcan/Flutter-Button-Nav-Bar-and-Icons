@@ -1,11 +1,10 @@
-import 'package:button_nav_bar/pages/discovery.dart';
-import 'package:button_nav_bar/pages/favorite.dart';
-import 'package:button_nav_bar/pages/home.dart';
-import 'package:button_nav_bar/pages/profile.dart';
+import 'package:button_nav_bar/ui/discovery/view/discovery.dart';
+import 'package:button_nav_bar/ui/favorite/view/favorite.dart';
+import 'package:button_nav_bar/ui/activity_home/view/activity_home.dart';
+import 'package:button_nav_bar/ui/profil/view/profile.dart';
 import 'package:button_nav_bar/theme/colors.dart';
 import 'package:button_nav_bar/widgets/bottom_bar_items.dart';
 import 'package:flutter/material.dart';
-
 
 class RootApp extends StatefulWidget {
   const RootApp({Key? key}) : super(key: key);
@@ -15,24 +14,24 @@ class RootApp extends StatefulWidget {
 }
 
 class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
-  int activeTab = 1;
+  int activeTab = 0;
   List barItems = [
-        {
+    {
       "icon": "assets/icons/home.svg",
       "active_icon": "assets/icons/home.svg",
-      "page": const Home(),
+      "page": ActivityHome(),
       "title": ""
     },
     {
       "icon": "assets/icons/navigation.svg",
       "active_icon": "assets/icons/navigation.svg",
-      "page": const Discovery(),
+      "page": Discovery(),
       "title": ""
     },
     {
       "icon": "assets/icons/heart.svg",
-      "active_icon": "assets/icons/navigation.svg",
-      "page": const Favorite(),
+      "active_icon": "assets/icons/heart.svg",
+      "page":  Favorite(),
       "title": ""
     },
     {
@@ -82,7 +81,9 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appBgColor,
+      //backgroundColor: appBgColor,
+      backgroundColor: const Color(0xff34495e),
+
       body: getBarPage(),
       // bottomNavigationBar: getBottomBar1()
       floatingActionButton: getBottomBar(),
@@ -93,9 +94,12 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
 
   Widget getBarPage() {
     return IndexedStack(
-        index: activeTab,
-        children: List.generate(
-            barItems.length, (index) => animatedPage(barItems[index]["page"])));
+      index: activeTab,
+      children: List.generate(
+        barItems.length,
+        (index) => animatedPage(barItems[index]["page"]),
+      ),
+    );
   }
 
   Widget getBottomBar() {
@@ -104,32 +108,35 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       width: double.infinity,
       margin: const EdgeInsets.fromLTRB(25, 0, 25, 15),
       decoration: BoxDecoration(
-        color: bottomBarColor,
+        //color: bottomBarColor,
+        color: const Color(0xFF5A60FF),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.2),
+            color: Colors.grey.withOpacity(0.3),
             blurRadius: 10,
             offset: const Offset(0, 10),
           ),
         ],
       ),
       child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: List.generate(
-              barItems.length,
-              (index) => BottomBarItem(
-                    activeTab == index
-                        ? barItems[index]["active_icon"]
-                        : barItems[index]["icon"],
-                    "",
-                    isActive: activeTab == index,
-                    activeColor: primary,
-                    onTap: () {
-                      onPageChanged(index);
-                    },
-                  ))),
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: List.generate(
+          barItems.length,
+          (index) => BottomBarItem(
+            activeTab == index
+                ? barItems[index]["active_icon"]
+                : barItems[index]["icon"],
+            "",
+            isActive: activeTab == index,
+            activeColor: Colors.white,
+            onTap: () {
+              onPageChanged(index);
+            },
+          ),
+        ),
+      ),
     );
   }
 }
