@@ -10,20 +10,18 @@ class Favorite extends StatelessWidget {
       //backgroundColor: Colors.white,
       backgroundColor: const Color(0xfff1f1f1),
       appBar: AppBar(
-        //backgroundColor: Colors.white,
         leading: Padding(
           padding: const EdgeInsets.all(16.0),
           child: SvgPicture.asset("assets/icons/angle-left.svg"),
         ),
-        //height: 10, width: 10, fit: BoxFit.cover,),
-        
         backgroundColor: const Color(0xfff1f1f1),
         elevation: 0,
-        title: Image.asset("assets/images/logo_beetinq.png",
-        height: 30,
-        fit: BoxFit.cover,
+        title: Image.asset(
+          "assets/images/logo_beetinq.png",
+          height: 30,
+          fit: BoxFit.cover,
         ),
-        
+
         /*
         title: Text(
           '',
@@ -39,9 +37,13 @@ class Favorite extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: [
+            //-----------------------------Üst Alan Boşluğu
+            const SizedBox(
+              height: 20,
+            ),
             //-----------------------------Toplantı Oluştur Text
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -56,7 +58,7 @@ class Favorite extends StatelessWidget {
             ),
             //-----------------------------Toplantı Oluştur Search
             Container(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -82,19 +84,19 @@ class Favorite extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         SvgPicture.asset(
                           "assets/icons/search.svg",
                           height: 15,
                         ),
-                        SizedBox(width: 10),
+                        const SizedBox(width: 10),
                         Expanded(
                           child: TextField(
                             textAlign: TextAlign.left,
                             expands: false,
                             onChanged: (value) {},
-                            style: TextStyle(fontSize: 16),
-                            decoration: InputDecoration(
+                            style: const TextStyle(fontSize: 16),
+                            decoration: const InputDecoration(
                               border: InputBorder.none,
                               hintText: "Toplantı Adı..",
                               contentPadding: EdgeInsets.all(0),
@@ -105,7 +107,7 @@ class Favorite extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 /*
                 InkWell(
                   onTap: () {},
@@ -118,12 +120,10 @@ class Favorite extends StatelessWidget {
                 */
               ]),
             ),
-            //-----------------------------Tarih Başlangıç Bitiş
-
+            //-----------------------------Tarih, Başlangıç, Bitiş
             Container(
-              margin: EdgeInsets.all(20),
-              padding: EdgeInsets.all(10),
-              //height: 145,
+              margin: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(10),
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -138,33 +138,36 @@ class Favorite extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Padding(
+                  InkWell(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                          onTap: () {},
+                          child: const Padding(
+                            padding: EdgeInsets.all(15),
+                            child: Text(
+                              'Tarih                   -',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
                           padding: const EdgeInsets.all(15),
                           child: Text(
-                            'Tarih                   -',
+                            '19 Temm 2023',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.black87,
                             ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Text(
-                          '19 Temm 2023',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   const Divider(
                     height: 1,
@@ -172,33 +175,36 @@ class Favorite extends StatelessWidget {
                     endIndent: 0,
                     color: Color(0xFF5A60FF),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Padding(
+                  InkWell(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                          onTap: () {},
+                          child: const Padding(
+                            padding: const EdgeInsets.all(15),
+                            child: Text(
+                              'Başlangıç          -',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
                           padding: const EdgeInsets.all(15),
                           child: Text(
-                            'Başlangıç          -',
+                            '21:00',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.black87,
                             ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Text(
-                          '21:00',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   const Divider(
                     height: 1,
@@ -206,105 +212,109 @@ class Favorite extends StatelessWidget {
                     endIndent: 0,
                     color: Color(0xFF5A60FF),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InkWell(
-                        onTap: () {},
-                        child: Padding(
+                  InkWell(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                          onTap: () {},
+                          child: const Padding(
+                            padding: EdgeInsets.all(15),
+                            child: Text(
+                              'Bitiş                    -',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
                           padding: const EdgeInsets.all(15),
                           child: Text(
-                            'Bitiş                    -',
+                            '22:00',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.black87,
                             ),
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(15),
-                        child: Text(
-                          '22:00',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ],
               ),
-            ),
-            const SizedBox(
-              height: 0,
             ),
             //-----------------------------Kişi Ekle ve Davetli
-            Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 10,
-              ),
-              padding: const EdgeInsets.symmetric(
-                vertical: 15,
-                horizontal: 20,
-              ),
-              //height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    blurRadius: 10,
-                    offset: const Offset(0, 10),
+            InkWell(
+              onTap: () {},
+              child: Container(
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 10,
+                ),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 15,
+                  horizontal: 20,
+                ),
+                //height: 45,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 10,
+                      offset: const Offset(0, 10),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  'Kişi Ekle  -  0 Davetli',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black87,
                   ),
-                ],
-              ),
-              child: Text(
-                'Kişi Ekle  -  0 Davetli',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black87,
                 ),
               ),
             ),
             //-----------------------------Bireysel Toplantı Box
-
-            Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 10,
-              ),
-              padding: const EdgeInsets.symmetric(
-                vertical: 15,
-                horizontal: 20,
-              ),
-              //height: 45,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    blurRadius: 10,
-                    offset: const Offset(0, 10),
+            InkWell(
+              onTap: () {},
+              child: Container(
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 10,
+                ),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 15,
+                  horizontal: 20,
+                ),
+                //height: 45,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 10,
+                      offset: const Offset(0, 10),
+                    ),
+                  ],
+                ),
+                child: Text(
+                  'Bireysel Toplantı',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.black87,
                   ),
-                ],
-              ),
-              child: Text(
-                'Bireysel Toplantı',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.black87,
                 ),
               ),
             ),
             //-----------------------------Toplantı Box
-
             Container(
               margin: const EdgeInsets.symmetric(
                 horizontal: 20,
@@ -463,37 +473,72 @@ class Favorite extends StatelessWidget {
               ),
             ),
             //-----------------------------Dosya Ekle Box
-            Container(
-              margin: EdgeInsets.all(20),
-              padding: EdgeInsets.all(10),
-              //height: 145,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
+            InkWell(
+              onTap: () {},
+              child: Container(
+                margin: const EdgeInsets.all(20),
+                padding: const EdgeInsets.all(10),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 10,
+                      offset: const Offset(0, 10),
+                    ),
+                  ],
+                ),
+                child: const Center(
+                    child: Text(
+                  "+",
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.black54,
+                  ),
+                )),
+              ),
+            ),
+
+            //-----------------------------Toplantı Onay Buttonu
+            /*
+            InkWell(
+              child: Container(
+                width: double.infinity,
+                padding:const EdgeInsets.all(15),
+                margin:const EdgeInsets.symmetric(horizontal: 20),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF5A60FF),
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.2),
                     blurRadius: 10,
                     offset: const Offset(0, 10),
                   ),
                 ],
-              ),
-              child: Center(
+                  ),
+                child:const Center(
                   child: Text(
-                "+",
-                style: TextStyle(
-                  fontSize: 50,
-                  color: Colors.black54,
+                    'Toplantıyı Oluştur',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
                 ),
-              )),
+              ),
             ),
+            */
+            //-----------------------------En Alt Boşluk
             const SizedBox(
-              height: 70,
+              height: 75,
             ),
 
             //************************************** */
-          /*
+            /*
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               child: TextField(
