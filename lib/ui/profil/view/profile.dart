@@ -13,6 +13,20 @@ class Profile extends StatelessWidget {
         title: Image.asset("assets/images/logo2.jpg", fit: BoxFit.cover),
         centerTitle: true,
         elevation: 0,
+                leading: InkWell(
+          child: Container(
+            padding: const EdgeInsets.all(18),
+            child: SvgPicture.asset("assets/icons/angle-left.svg"),
+          ),
+        ),
+        actions: [
+          InkWell(
+            child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 18,horizontal: 20,),
+            child: SvgPicture.asset("assets/icons/menu2.svg"),
+          ),
+            )
+        ],
       ),
       body: Column(
         children: [

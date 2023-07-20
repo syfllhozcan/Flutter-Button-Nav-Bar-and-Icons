@@ -11,6 +11,20 @@ class Discovery extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Image.asset("assets/images/logo2.jpg", fit: BoxFit.cover),
+        leading: InkWell(
+          child: Container(
+            padding: const EdgeInsets.all(18),
+            child: SvgPicture.asset("assets/icons/angle-left.svg"),
+          ),
+        ),
+        actions: [
+          InkWell(
+            child: Container(
+            padding: const EdgeInsets.symmetric(vertical: 18,horizontal: 20,),
+            child: SvgPicture.asset("assets/icons/menu2.svg"),
+          ),
+            )
+        ],
         centerTitle: true,
         elevation: 0,
       ),
@@ -101,7 +115,9 @@ class Discovery extends StatelessWidget {
               ),
             ]),
           ),
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           Expanded(
             child: ListView(
               scrollDirection: Axis.vertical,
@@ -386,7 +402,6 @@ class Discovery extends StatelessWidget {
                     )
                   ]),
                 ),
-
                 const SizedBox(
                   height: 50,
                 ),
@@ -645,7 +660,7 @@ class Discovery extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-               /*
+                /*
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 20),

@@ -2,7 +2,7 @@ import 'package:button_nav_bar/ui/discovery/view/discovery.dart';
 import 'package:button_nav_bar/ui/favorite/view/favorite.dart';
 import 'package:button_nav_bar/ui/activity_home/view/activity_home.dart';
 import 'package:button_nav_bar/ui/profil/view/profile.dart';
-import 'package:button_nav_bar/theme/colors.dart';
+//import 'package:button_nav_bar/theme/colors.dart';
 import 'package:button_nav_bar/widgets/bottom_bar_items.dart';
 import 'package:flutter/material.dart';
 
@@ -82,7 +82,8 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       //backgroundColor: appBgColor,
-      backgroundColor: const Color(0xff34495e),
+      //backgroundColor: const Color(0xff34495e),
+      backgroundColor: const Color(0xfff1f1f1),
 
       body: getBarPage(),
       // bottomNavigationBar: getBottomBar1()
