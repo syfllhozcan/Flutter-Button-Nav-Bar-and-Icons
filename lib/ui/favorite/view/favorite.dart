@@ -502,8 +502,7 @@ class Favorite extends StatelessWidget {
             ),
 
             //-----------------------------Toplantı Onay Buttonu
-            /*
-            InkWell(
+           /* InkWell(
               child: Container(
                 width: double.infinity,
                 padding:const EdgeInsets.all(15),
@@ -531,8 +530,7 @@ class Favorite extends StatelessWidget {
                 ),
               ),
             ),
-            */
-            //-----------------------------En Alt Boşluk
+            *///-----------------------------En Alt Boşluk
             const SizedBox(
               height: 75,
             ),
