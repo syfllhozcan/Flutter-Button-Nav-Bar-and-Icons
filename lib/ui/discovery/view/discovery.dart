@@ -7,10 +7,14 @@ class Discovery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xfff1f1f1),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Image.asset("assets/images/logo2.jpg", fit: BoxFit.cover),
+        backgroundColor: const Color(0xfff1f1f1),
+        title: Image.asset(
+          "assets/images/logo_beetinq.png",
+          height: 30,
+          fit: BoxFit.cover,
+        ),
         leading: InkWell(
           child: Container(
             padding: const EdgeInsets.all(18),
@@ -20,10 +24,13 @@ class Discovery extends StatelessWidget {
         actions: [
           InkWell(
             child: Container(
-            padding: const EdgeInsets.symmetric(vertical: 18,horizontal: 20,),
-            child: SvgPicture.asset("assets/icons/menu2.svg"),
-          ),
-            )
+              padding: const EdgeInsets.symmetric(
+                vertical: 18,
+                horizontal: 20,
+              ),
+              child: SvgPicture.asset("assets/icons/menu2.svg"),
+            ),
+          )
         ],
         centerTitle: true,
         elevation: 0,
@@ -39,6 +46,13 @@ class Discovery extends StatelessWidget {
             decoration: BoxDecoration(
               color: const Color(0xFF5A60FF),
               borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.3),
+                  blurRadius: 10,
+                  offset: const Offset(0, 10),
+                ),
+              ],
             ),
             child: Column(children: [
               Row(
@@ -124,284 +138,321 @@ class Discovery extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffE8DAEF),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/filter1.svg",
-                        height: 20,
-                        width: 20,
-                      ),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    margin: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          blurRadius: 10,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Kontrol Paneli',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffD5F5E3),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/notification1.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Duyurular',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffD6EAF8),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/event.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Etkinlik Programı',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffFCF3CF),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/edit.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Etkinlik Notlarım',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffF2D7D5),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/handshake2.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Görüşmelerim',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffD5F5E3),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/support.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Destek',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffFCF3CF),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/operation-and-maintenance-center-execution-record-svgrepo-com.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Anket',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffE8DAEF),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/firma.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Firmaşar',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 15, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffD6EAF8),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/person1.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Katılımcılar',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
+                    child: Column(
+                      children: [
+                        Container(
+                          color: Colors.white,
+                          padding: const EdgeInsets.all(0),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 0, vertical: 0),
+                          child: Row(children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 5),
+                              decoration: BoxDecoration(
+                                //color: Colors.white,
+                                color: const Color(0xffE8DAEF),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/filter1.svg",
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Kontrol Paneli',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            )
+                          ]),
+                        ),
+                        Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(0),
+                          margin:
+                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          child: Row(children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 5),
+                              decoration: BoxDecoration(
+                                //color: Colors.white,
+                                color: Color(0xffD5F5E3),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/notification1.svg",
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Duyurular',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            )
+                          ]),
+                        ),
+                        Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(0),
+                          margin:
+                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          child: Row(children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 5),
+                              decoration: BoxDecoration(
+                                //color: Colors.white,
+                                color: Color(0xffD6EAF8),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/event.svg",
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Etkinlik Programı',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            )
+                          ]),
+                        ),
+                        Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(0),
+                          margin:
+                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          child: Row(children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 5),
+                              decoration: BoxDecoration(
+                                //color: Colors.white,
+                                color: Color(0xffFCF3CF),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/edit.svg",
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Etkinlik Notlarım',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            )
+                          ]),
+                        ),
+                        Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(0),
+                          margin:
+                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          child: Row(children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 5),
+                              decoration: BoxDecoration(
+                                //color: Colors.white,
+                                color: Color(0xffF2D7D5),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/handshake2.svg",
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Görüşmelerim',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            )
+                          ]),
+                        ),
+                        Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(0),
+                          margin:
+                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          child: Row(children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 5),
+                              decoration: BoxDecoration(
+                                //color: Colors.white,
+                                color: Color(0xffD5F5E3),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/support.svg",
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Destek',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            )
+                          ]),
+                        ),
+                        Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(0),
+                          margin:
+                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          child: Row(children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 5),
+                              decoration: BoxDecoration(
+                                //color: Colors.white,
+                                color: Color(0xffFCF3CF),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/operation-and-maintenance-center-execution-record-svgrepo-com.svg",
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Anket',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            )
+                          ]),
+                        ),
+                        Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(0),
+                          margin:
+                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          child: Row(children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 5),
+                              decoration: BoxDecoration(
+                                //color: Colors.white,
+                                color: Color(0xffE8DAEF),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/firma.svg",
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Firmalar',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            )
+                          ]),
+                        ),
+                        Container(
+                          color: Colors.white,
+                          padding: EdgeInsets.all(0),
+                          margin:
+                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
+                          child: Row(children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              margin: const EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 5),
+                              decoration: BoxDecoration(
+                                //color: Colors.white,
+                                color:const Color(0xffD6EAF8),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: SvgPicture.asset(
+                                "assets/icons/person1.svg",
+                                height: 20,
+                                width: 20,
+                              ),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Katılımcılar',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.black87,
+                              ),
+                            )
+                          ]),
+                        ),
+                      ],
+                    )),
                 const SizedBox(
                   height: 50,
                 ),
@@ -409,8 +460,16 @@ class Discovery extends StatelessWidget {
                     padding: const EdgeInsets.all(15),
                     margin: const EdgeInsets.symmetric(horizontal: 20),
                     decoration: BoxDecoration(
-                      color: const Color(0xfff6f8f7),
+                      //color: const Color(0xfff6f8f7),
+                      color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.3),
+                          blurRadius: 10,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
                     ),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -551,7 +610,7 @@ class Discovery extends StatelessWidget {
                         Container(
                           alignment: Alignment.centerLeft,
                           padding: const EdgeInsets.symmetric(vertical: 5),
-                          child: Text(
+                          child:const Text(
                             "Etkinliği Paylaş",
                             style: TextStyle(
                               fontSize: 18,
@@ -564,8 +623,12 @@ class Discovery extends StatelessWidget {
                           height: 10,
                         ),
                         Container(
-                          padding: const EdgeInsets.all(3),
-                          color: Colors.white,
+                          padding: const EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                            color:const Color(0xfff1f1f1),
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                        
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -576,7 +639,7 @@ class Discovery extends StatelessWidget {
                                     vertical: 5,
                                     horizontal: 5,
                                   ),
-                                  color: Colors.white,
+                                  //color: Colors.white,
                                   child: Image.network(
                                     'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Chain_link_icon_slanted.png/800px-Chain_link_icon_slanted.png',
                                     height: 27,
@@ -592,7 +655,7 @@ class Discovery extends StatelessWidget {
                                     vertical: 5,
                                     horizontal: 5,
                                   ),
-                                  color: Colors.white,
+                                  //color: Colors.white,
                                   child: Image.network(
                                     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn_-Oe_Kwr62vEHmZ_O_OdrqvE8HJ11q7XTw&usqp=CAU',
                                     height: 27,
@@ -608,7 +671,7 @@ class Discovery extends StatelessWidget {
                                     vertical: 5,
                                     horizontal: 5,
                                   ),
-                                  color: Colors.white,
+                                  //color: Colors.white,
                                   child: Image.network(
                                     'https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/800px-Facebook_f_logo_%282021%29.svg.png',
                                     height: 27,
@@ -624,7 +687,7 @@ class Discovery extends StatelessWidget {
                                     vertical: 5,
                                     horizontal: 5,
                                   ),
-                                  color: Colors.white,
+                                  //color: Colors.white,
                                   child: Image.network(
                                     'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png',
                                     height: 27,
@@ -640,7 +703,7 @@ class Discovery extends StatelessWidget {
                                     vertical: 5,
                                     horizontal: 5,
                                   ),
-                                  color: Colors.white,
+                                  //color: Colors.white,
                                   child: Image.network(
                                     'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/150px-Instagram_logo_2022.svg.png',
                                     height: 27,
