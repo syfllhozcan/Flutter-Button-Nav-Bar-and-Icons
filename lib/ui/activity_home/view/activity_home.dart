@@ -1,3 +1,4 @@
+import 'package:button_nav_bar/ui/meeting/view/meeting.dart';
 import 'package:button_nav_bar/ui/notes/view/notes_page.dart';
 import 'package:button_nav_bar/ui/profil/view/profile.dart';
 import 'package:button_nav_bar/widgets/box_data.dart';
@@ -47,6 +48,7 @@ class ActivityHome extends StatelessWidget {
           children: [
             // _buildSignOutButton(context), //Çıkış Butonu
             //_buildPfogilFoto(), //Profil Fotosu
+            //Profil resim, isim, düzenleme icon
             Container(
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
@@ -187,6 +189,7 @@ class ActivityHome extends StatelessWidget {
               ),
             ),
             _buildCityNameLength(), //Şehir, Ad, Şikayet sayısı
+            //heştekler
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 0),
               //padding: EdgeInsets.symmetric(horizontal: 10),
@@ -309,7 +312,7 @@ class ActivityHome extends StatelessWidget {
                     color: Color(0xfff2ba7b),
                     icon: "assets/icons/bitconnect.svg",
                     text: "Toplantı",
-                    rota: Profile(),
+                    rota: Meeting(),
                   ),
                    //Mavi Kutu
                   /*Container(
@@ -493,6 +496,7 @@ class ActivityHome extends StatelessWidget {
               ),
             ),
          */
+            //Profili görüntüleyenler
             Container(
               padding: const EdgeInsets.all(15),
               child: const Center(

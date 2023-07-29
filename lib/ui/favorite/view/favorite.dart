@@ -404,8 +404,69 @@ class Favorite extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(
-              height: 20,
+             //-----------------------------Konum Ekle Serarch
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: Row(children: [
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 0, bottom: 0),
+                    padding: const EdgeInsets.all(0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.black12,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(width: 10),
+                        SvgPicture.asset(
+                          "assets/icons/marker.svg",
+                          height: 15,
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            expands: false,
+                            onChanged: (value) {},
+                            style: const TextStyle(fontSize: 16),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Konum Ekle..",
+                              contentPadding: EdgeInsets.all(0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                /*
+                InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    FontAwesomeIcons.filter,
+                    color: theme.primaryColor,
+                    size: 20,
+                  ),
+                ),
+                */
+              ]),
             ),
             //-----------------------------Açıklama Ekle Text and Box
             Container(
@@ -502,7 +563,7 @@ class Favorite extends StatelessWidget {
             ),
 
             //-----------------------------Toplantı Onay Buttonu
-           /* InkWell(
+            /* InkWell(
               child: Container(
                 width: double.infinity,
                 padding:const EdgeInsets.all(15),
@@ -530,7 +591,7 @@ class Favorite extends StatelessWidget {
                 ),
               ),
             ),
-            *///-----------------------------En Alt Boşluk
+            */ //-----------------------------En Alt Boşluk
             const SizedBox(
               height: 75,
             ),
