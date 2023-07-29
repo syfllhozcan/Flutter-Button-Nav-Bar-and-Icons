@@ -16,9 +16,13 @@ class Discovery extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         leading: InkWell(
-          child: Container(
-            padding: const EdgeInsets.all(18),
-            child: SvgPicture.asset("assets/icons/angle-left.svg"),
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios_sharp,
+            color: Colors.black87,
+            size: 23,
           ),
         ),
         actions: [

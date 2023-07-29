@@ -10,9 +10,15 @@ class Favorite extends StatelessWidget {
       //backgroundColor: Colors.white,
       backgroundColor: const Color(0xfff1f1f1),
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SvgPicture.asset("assets/icons/angle-left.svg"),
+        leading: InkWell(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios_sharp,
+            color: Colors.black87,
+            size: 23,
+          ),
         ),
         backgroundColor: const Color(0xfff1f1f1),
         elevation: 0,
