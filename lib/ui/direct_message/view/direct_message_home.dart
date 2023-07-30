@@ -9,7 +9,9 @@ import 'package:beetinq/ui/direct_message/widget/dm_page_header_vidget.dart';
 import 'package:beetinq/ui/direct_message/widget/header_widget.dart';
 import 'package:beetinq/ui/direct_message/widget/user_list_message_tile.dart';
 import 'package:beetinq/ui/menu_page/view/menu_page.dart';*/
+import 'package:button_nav_bar/ui/profil/view/profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 //import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -38,7 +40,100 @@ class _DirectMessageHomePageState extends State<DirectMessageHomePage> {
     final theme = Theme.of(context);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      extendBody: true,
+      extendBody: false,
+      //backgroundColor: Colors.transparent,
+      /*
+      floatingActionButton: Stack(
+        children: [
+          Positioned(
+            right: 0,
+            bottom: 0,
+            child: FloatingActionButton(
+              heroTag: "btn7",
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => Profile(
+                      ),
+                  ),
+                );
+              },
+              backgroundColor: Theme.of(context).primaryColor,
+              child: const Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 70,
+            right: 0,
+            child: FloatingActionButton(
+              heroTag: "btn8",
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => Profile(),
+                  ),
+                );
+              },
+              backgroundColor: Theme.of(context).primaryColor,
+              child: const Icon(
+                Icons.calendar_month,
+                color: Colors.white,
+              ),
+            ),
+          )
+        ],
+      ),
+      */
+      floatingActionButton: SpeedDial(
+        animatedIcon: AnimatedIcons.menu_close,
+        //animatedIcon: AnimatedIcons.close_menu,
+        backgroundColor: Colors.redAccent,
+        //activeBackgroundColor: Colors.redAccent,
+        overlayOpacity: 0.7,
+        spacing: 8,
+        spaceBetweenChildren: 12,
+        children: [
+          SpeedDialChild(
+            child: SvgPicture.asset(
+              "assets/icons/camera.svg",
+              height: 20,
+              width: 20,
+            ),
+            label: 'Fotoğraf',
+            backgroundColor:const Color(0xffe8daef),
+          ),
+          SpeedDialChild(
+            child: SvgPicture.asset(
+              "assets/icons/attach.svg",
+              height: 20,
+              width: 20,
+            ),
+            label: 'Dosya',
+            backgroundColor:const Color(0xffd5f5e3),
+          ),
+          SpeedDialChild(
+            child: SvgPicture.asset(
+              "assets/icons/microphone.svg",
+              height: 20,
+              width: 20,
+            ),
+            label: 'Ses',
+            backgroundColor:const Color(0xffd6eaf8),
+          ),
+          SpeedDialChild(
+            child: SvgPicture.asset(
+              "assets/icons/operation.svg",
+              height: 20,
+              width: 20,
+            ),
+            label: 'Metin',
+            backgroundColor:const Color(0xfffcf3cf),
+          ),
+        ],
+      ),
       backgroundColor: const Color(0xfff1f1f1),
       appBar: AppBar(
         backgroundColor: const Color(0xfff1f1f1),
