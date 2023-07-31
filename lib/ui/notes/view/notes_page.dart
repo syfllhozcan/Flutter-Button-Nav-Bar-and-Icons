@@ -75,7 +75,7 @@ class NotesPage extends StatelessWidget {
                   child: CircleAvatar(
                     backgroundColor: Colors.white,
                     backgroundImage: AssetImage(
-                      "assets/images/logo.jpg",
+                      "assets/images/profile$index.jpg",
                     ),
                     radius: 30,
                   ),

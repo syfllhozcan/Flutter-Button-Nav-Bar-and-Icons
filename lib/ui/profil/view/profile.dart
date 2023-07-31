@@ -122,13 +122,11 @@ class Profile extends StatelessWidget {
                               child: CircleAvatar(
                                 backgroundColor: Colors.white,
                                 radius: 14,
-                                child: SizedBox(
-                                  height: 18,
-                                  width: 18,
-                                  child: SvgPicture.asset(
-                                    "assets/icons/basic-camera.svg",
-                                    color: Colors.black87,
-                                  ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/basic-camera.svg",
+                                  height: 17,
+                                  width: 17,
+                                  color: Colors.black,
                                 ),
                               ),
                             ),
@@ -192,9 +190,9 @@ class Profile extends StatelessWidget {
                             child: Row(
                               children: [
                                 Image.asset(
-                                  "assets/images/square_black.jpg",
-                                  height: 18,
-                                  width: 18,
+                                  "assets/images/logo.jpg",
+                                  height: 20,
+                                  width: 20,
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 5),
