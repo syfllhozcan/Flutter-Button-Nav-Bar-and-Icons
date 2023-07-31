@@ -76,9 +76,9 @@ class BoxData extends StatelessWidget {
                 children: [
                   Text(
                     //'17  Data',
-                    "Detaylı Gör",
+                    "Detayda Gör",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 15,
                       fontWeight: FontWeight.bold,
                       fontStyle: FontStyle.italic,
                       color: Colors.grey.shade800,

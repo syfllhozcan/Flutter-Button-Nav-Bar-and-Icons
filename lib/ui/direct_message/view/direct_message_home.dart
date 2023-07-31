@@ -92,7 +92,7 @@ class _DirectMessageHomePageState extends State<DirectMessageHomePage> {
         //animatedIcon: AnimatedIcons.close_menu,
         backgroundColor: Colors.redAccent,
         //activeBackgroundColor: Colors.redAccent,
-        overlayOpacity: 0.7,
+        overlayOpacity: 0.0,
         spacing: 8,
         spaceBetweenChildren: 12,
         children: [
