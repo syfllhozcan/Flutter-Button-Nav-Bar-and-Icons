@@ -1,17 +1,105 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 
-class Favorite extends StatelessWidget {
+class Favorite extends StatefulWidget {
   Favorite({super.key});
-  TextEditingController _soyad = TextEditingController();
+
+  @override
+  State<Favorite> createState() => _FavoriteState();
+}
+
+class _FavoriteState extends State<Favorite> {
+
+  String selectedToplanti = 'Toplantı'; // Başlangıçta seçili değer Toplantı
+  String selectedYuzyuze = 'Yüzyüze'; // Başlangıçta seçili değer Yüzyüze
+  List<String> dropdownToplanti = [
+    'Toplantı',
+    'Seminer',
+    'Panel',
+    'Konferans',
+    'Diğer',
+  ];
+
+  List<String> dropdownYuzyuze = [
+    'Yüzyüze',
+    'Online',
+    'Hibrit',
+    'Telefon',
+    'Yazışma',
+    'Diğer',
+  ];
+
+  DateTime selectedDate = DateTime(2023, 7, 19, 21, 0);
+  DateTime selectedStartTime = DateTime(2023, 7, 19, 21, 0);
+  DateTime selectedEndTime = DateTime(2023, 7, 19, 22, 0);
+
+  void _selectDate() {
+    DatePicker.showDatePicker(
+      context,
+      showTitleActions: true,
+      minTime: DateTime(2021, 1, 1),
+      maxTime: DateTime(2025, 12, 31),
+      onChanged: (date) {
+        setState(() {
+          selectedDate = date;
+        });
+      },
+      currentTime: selectedDate,
+      locale: LocaleType.tr,
+    );
+  }
+
+  void _selectStartTime() {
+    DatePicker.showTimePicker(
+      context,
+      showTitleActions: true,
+      onChanged: (time) {
+        setState(() {
+          selectedStartTime = DateTime(
+            selectedDate.year,
+            selectedDate.month,
+            selectedDate.day,
+            time.hour,
+            time.minute,
+          );
+        });
+      },
+      currentTime: selectedStartTime,
+      locale: LocaleType.tr,
+    );
+  }
+
+  void _selectEndTime() {
+    DatePicker.showTimePicker(
+      context,
+      showTitleActions: true,
+      onChanged: (time) {
+        setState(() {
+          selectedEndTime = DateTime(
+            selectedDate.year,
+            selectedDate.month,
+            selectedDate.day,
+            time.hour,
+            time.minute,
+          );
+        });
+      },
+      currentTime: selectedEndTime,
+      locale: LocaleType.tr,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final dateFormatter = DateFormat('d MMMM yyyy');
+    final timeFormatter = DateFormat('HH:mm');
     return Scaffold(
-      //backgroundColor: Colors.white,
       backgroundColor: const Color(0xfff1f1f1),
       appBar: AppBar(
         leading: InkWell(
-          onTap: (){
+          onTap: () {
             Navigator.pop(context);
           },
           child: const Icon(
@@ -145,28 +233,26 @@ class Favorite extends StatelessWidget {
               child: Column(
                 children: [
                   InkWell(
-                    onTap: () {},
+                    onTap: _selectDate,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        InkWell(
-                          onTap: () {},
-                          child: const Padding(
-                            padding: EdgeInsets.all(15),
-                            child: Text(
-                              'Tarih                   -',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
-                              ),
+                        const Padding(
+                          padding: EdgeInsets.all(15),
+                          child: Text(
+                            'Tarih                   -',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black87,
                             ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(15),
                           child: Text(
-                            '19 Temm 2023',
-                            style: TextStyle(
+                            //'19 Temm 2023',
+                            '${dateFormatter.format(selectedDate)}',
+                            style: const TextStyle(
                               fontSize: 16,
                               color: Colors.black87,
                             ),
@@ -182,28 +268,26 @@ class Favorite extends StatelessWidget {
                     color: Color(0xFF5A60FF),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: _selectStartTime,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        InkWell(
-                          onTap: () {},
-                          child: const Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: Text(
-                              'Başlangıç          -',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
-                              ),
+                        const Padding(
+                          padding: EdgeInsets.all(15),
+                          child: Text(
+                            'Başlangıç          -',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black87,
                             ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(15),
                           child: Text(
-                            '21:00',
-                            style: TextStyle(
+                            //'21:00',
+                            '${timeFormatter.format(selectedStartTime)}',
+                            style: const TextStyle(
                               fontSize: 16,
                               color: Colors.black87,
                             ),
@@ -219,28 +303,26 @@ class Favorite extends StatelessWidget {
                     color: Color(0xFF5A60FF),
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: _selectEndTime,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        InkWell(
-                          onTap: () {},
-                          child: const Padding(
-                            padding: EdgeInsets.all(15),
-                            child: Text(
-                              'Bitiş                    -',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
-                              ),
+                        const Padding(
+                          padding: EdgeInsets.all(15),
+                          child: Text(
+                            'Bitiş                    -',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.black87,
                             ),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(15),
                           child: Text(
-                            '22:00',
-                            style: TextStyle(
+                            //'22:00',
+                            '${timeFormatter.format(selectedEndTime)}',
+                            style: const TextStyle(
                               fontSize: 16,
                               color: Colors.black87,
                             ),
@@ -322,16 +404,9 @@ class Favorite extends StatelessWidget {
             ),
             //-----------------------------Toplantı Box
             Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 10,
-              ),
-              padding: const EdgeInsets.symmetric(
-                vertical: 15,
-                horizontal: 20,
-              ),
-              //height: 45,
               width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -343,40 +418,36 @@ class Favorite extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Toplantı',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(
-                    child: SvgPicture.asset(
-                      "assets/icons/dropdown.svg",
-                      color: Colors.black87,
-                      fit: BoxFit.cover,
-                      height: 10,
-                      width: 10,
-                    ),
-                  ),
-                ],
+              child: DropdownButton<String>(
+                value: selectedToplanti,
+                icon: const Icon(Icons.arrow_drop_down),
+                iconSize: 28,
+                elevation: 16,
+                isExpanded: true,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.black87,
+                ),
+                underline: const SizedBox(),
+                onChanged: (newValue) {
+                  setState(() {
+                    selectedToplanti = newValue!;
+                  });
+                },
+                items: dropdownToplanti
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
               ),
             ),
             //-----------------------------Yüzyüze Box
             Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 10,
-              ),
-              padding: const EdgeInsets.symmetric(
-                vertical: 15,
-                horizontal: 20,
-              ),
-              //height: 45,
               width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -388,29 +459,32 @@ class Favorite extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Yüzyüze',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.black87,
-                    ),
-                  ),
-                  SizedBox(
-                    child: SvgPicture.asset(
-                      "assets/icons/dropdown.svg",
-                      color: Colors.black87,
-                      fit: BoxFit.cover,
-                      height: 10,
-                      width: 10,
-                    ),
-                  ),
-                ],
+              child: DropdownButton<String>(
+                value: selectedYuzyuze,
+                icon: const Icon(Icons.arrow_drop_down),
+                iconSize: 28,
+                elevation: 16,
+                isExpanded: true,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.black87,
+                ),
+                underline: const SizedBox(),
+                onChanged: (newValue) {
+                  setState(() {
+                    selectedYuzyuze = newValue!;
+                  });
+                },
+                items: dropdownYuzyuze
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
               ),
             ),
-             //-----------------------------Konum Ekle Serarch
+            //-----------------------------Konum Ekle Serarch
             Container(
               margin: const EdgeInsets.all(10),
               child: Row(children: [
@@ -523,6 +597,7 @@ class Favorite extends StatelessWidget {
                 ],
               ),
             ),
+            //-----------------------------Boşluk
             const SizedBox(
               height: 30,
             ),
@@ -601,438 +676,6 @@ class Favorite extends StatelessWidget {
             const SizedBox(
               height: 75,
             ),
-
-            //************************************** */
-            /*
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                controller: _soyad,
-                decoration: InputDecoration(
-                  hintText: 'Add Detail..',
-                  icon: SvgPicture.asset(
-                    "assets/icons/filter1.svg",
-                    height: 30,
-                    width: 30,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey.shade200,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue.withOpacity(0.8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                controller: _soyad,
-                decoration: InputDecoration(
-                  hintText: 'Kişi Ekle.',
-                  icon: SvgPicture.asset(
-                    "assets/icons/filter1.svg",
-                    height: 30,
-                    width: 30,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey.shade200,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue.withOpacity(0.8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                controller: _soyad,
-                decoration: InputDecoration(
-                  hintText: 'Video Konferans Ekle..',
-                  icon: SvgPicture.asset(
-                    "assets/icons/filter1.svg",
-                    height: 30,
-                    width: 30,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey.shade200,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue.withOpacity(0.8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                controller: _soyad,
-                decoration: InputDecoration(
-                  hintText: 'Konum Ekle..',
-                  icon: SvgPicture.asset(
-                    "assets/icons/filter1.svg",
-                    height: 30,
-                    width: 30,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey.shade200,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue.withOpacity(0.8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                controller: _soyad,
-                decoration: InputDecoration(
-                  hintText: 'Bildirim Ekle..',
-                  icon: SvgPicture.asset(
-                    "assets/icons/filter1.svg",
-                    height: 30,
-                    width: 30,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey.shade200,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue.withOpacity(0.8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                controller: _soyad,
-                decoration: InputDecoration(
-                  hintText: 'Açıklama Ekle..',
-                  icon: SvgPicture.asset(
-                    "assets/icons/filter1.svg",
-                    height: 30,
-                    width: 30,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey.shade200,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue.withOpacity(0.8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                controller: _soyad,
-                decoration: InputDecoration(
-                  hintText: 'Dosya Ekle..',
-                  icon: SvgPicture.asset(
-                    "assets/icons/filter1.svg",
-                    height: 30,
-                    width: 30,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey.shade200,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue.withOpacity(0.8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                controller: _soyad,
-                decoration: InputDecoration(
-                  hintText: 'Soyadınız..',
-                  icon: SvgPicture.asset(
-                    "assets/icons/filter1.svg",
-                    height: 30,
-                    width: 30,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey.shade200,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue.withOpacity(0.8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-              child: TextField(
-                controller: _soyad,
-                decoration: InputDecoration(
-                  hintText: 'Soyadınız..',
-                  icon: SvgPicture.asset(
-                    "assets/icons/filter1.svg",
-                    height: 30,
-                    width: 30,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blueGrey.shade200,
-                      width: 1,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.blue.withOpacity(0.8),
-                      width: 2,
-                    ),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Container(
-              color: Color(0xfff7f7f7),
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
-              child: Column(children: [
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffE8DAEF),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/filter1.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Kontrol Paneli',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                /*
-                Divider(
-                  height: 0.5,
-                  indent: 75,
-                  endIndent: 60,
-                  color: Colors.black,
-                ),
-                */
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffE8DAEF),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/filter1.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Kontrol Paneli',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                /*
-                Divider(
-                  height: 0.5,
-                  indent: 75,
-                  endIndent: 60,
-                  color: Colors.black,
-                ),
-                */
-              ]),
-            ),
-            Container(
-              color: Color(0xfff7f7f7),
-              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 0),
-              child: Column(children: [
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffE8DAEF),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/filter1.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Kontrol Paneli',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                /*
-                Divider(
-                  height: 0.5,
-                  indent: 75,
-                  endIndent: 60,
-                  color: Colors.black,
-                ),
-                */
-                Container(
-                  color: Color(0xfff7f7f7),
-                  padding: EdgeInsets.all(0),
-                  margin: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
-                  child: Row(children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        //color: Colors.white,
-                        color: Color(0xffE8DAEF),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: SvgPicture.asset(
-                        "assets/icons/filter1.svg",
-                        height: 20,
-                        width: 20,
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      'Kontrol Paneli',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    )
-                  ]),
-                ),
-                Divider(
-                  height: 0.5,
-                  indent: 75,
-                  endIndent: 60,
-                  color: Colors.black,
-                ),
-              ]),
-            ),
-            Text(
-              'Favorite Page',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-              ),
-            ),
-          */
           ],
         ),
       ),

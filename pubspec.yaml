@@ -39,6 +39,8 @@ dependencies:
   auto_size_text: ^3.0.0
   font_awesome_flutter: ^10.5.0
   flutter_speed_dial: ^7.0.0
+  flutter_datetime_picker_plus: ^2.0.1
+  intl: ^0.18.1
 
 dev_dependencies:
   flutter_test:
