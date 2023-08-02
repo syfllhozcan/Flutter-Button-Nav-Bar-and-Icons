@@ -1,3 +1,4 @@
+import 'package:button_nav_bar/ui/activity_home/view/activity_home.dart';
 import 'package:button_nav_bar/ui/direct_message/view/direct_message_home.dart';
 import 'package:button_nav_bar/ui/firma_profil/view/fima_profil.dart';
 import 'package:button_nav_bar/ui/meeting/view/meeting.dart';
@@ -39,6 +40,512 @@ class Profile extends StatelessWidget {
         ),
         actions: [
           InkWell(
+            onTap: () {
+              showDialog(
+                context: context,
+                //barrierDismissible: false,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    contentPadding: const EdgeInsets.all(0),
+                    title: null,
+                    content: Center(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        color: Colors.white,
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 0, vertical: 15),
+                        child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xfff1f1f1),
+                                  borderRadius: BorderRadius.circular(50),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.6),
+                                      blurRadius: 10,
+                                      offset: const Offset(0, 10),
+                                    ),
+                                  ],
+                                ),
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.grey[800],
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(50),
+                                    child: Image.asset(
+                                      "assets/images/profile.jpg",
+                                      height: 100,
+                                      width: 100,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              InkWell(
+                                onTap: () => Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => Profile(),
+                                  ),
+                                ),
+                                child: Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 12,
+                                    vertical: 6,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    borderRadius: BorderRadius.circular(6),
+                                    border: Border.all(
+                                      width: 1,
+                                      color: Colors.black87,
+                                    ),
+                                  ),
+                                  child: Text(
+                                    "Seyfullah Özcan",
+                                    style: TextStyle(
+                                      fontSize: 15,
+                                      fontStyle: FontStyle.italic,
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              /*
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF5A60FF),
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: const Text(
+                          "Profili Görüntüle",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      */
+                              const SizedBox(
+                                height: 20,
+                              ),
+                              SingleChildScrollView(
+                                  child: Column(children: [
+                                InkWell(
+                                  onTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => ActivityHome(),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.all(8),
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xfff1f1f1),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        child: SizedBox(
+                                          height: 23,
+                                          width: 23,
+                                          child: SvgPicture.asset(
+                                            "assets/icons/bitconnect.svg",
+                                            //icon,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            vertical: 15, horizontal: 15),
+                                        child: Text(
+                                          'Anasayfa',
+                                          //text,
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle: FontStyle.italic,
+                                            color: Colors.grey.shade800,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Align(
+                                          alignment: Alignment.centerRight,
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Padding(
+                                                  padding: const EdgeInsets
+                                                      .symmetric(horizontal: 8),
+                                                  child: Icon(
+                                                    Icons
+                                                        .keyboard_arrow_right_sharp,
+                                                    size: 23,
+                                                  ))
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xfff1f1f1),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: SizedBox(
+                                        height: 23,
+                                        width: 23,
+                                        child: SvgPicture.asset(
+                                          "assets/icons/bitconnect.svg",
+                                          //icon,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 15, horizontal: 15),
+                                      child: Text(
+                                        'Takvim',
+                                        //text,
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle: FontStyle.italic,
+                                          color: Colors.grey.shade800,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Align(
+                                        alignment: Alignment.centerRight,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 8),
+                                                child: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_right_sharp,
+                                                  size: 23,
+                                                ))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xfff1f1f1),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: SizedBox(
+                                        height: 23,
+                                        width: 23,
+                                        child: SvgPicture.asset(
+                                          "assets/icons/bitconnect.svg",
+                                          //icon,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 15, horizontal: 15),
+                                      child: Text(
+                                        'Bağlantılar',
+                                        //text,
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle: FontStyle.italic,
+                                          color: Colors.grey.shade800,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Align(
+                                        alignment: Alignment.centerRight,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 8),
+                                                child: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_right_sharp,
+                                                  size: 23,
+                                                ))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xfff1f1f1),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: SizedBox(
+                                        height: 23,
+                                        width: 23,
+                                        child: SvgPicture.asset(
+                                          "assets/icons/bitconnect.svg",
+                                          //icon,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 15, horizontal: 15),
+                                      child: Text(
+                                        'Mesajlar',
+                                        //text,
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle: FontStyle.italic,
+                                          color: Colors.grey.shade800,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Align(
+                                        alignment: Alignment.centerRight,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 8),
+                                                child: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_right_sharp,
+                                                  size: 23,
+                                                ))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xfff1f1f1),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: SizedBox(
+                                        height: 23,
+                                        width: 23,
+                                        child: SvgPicture.asset(
+                                          "assets/icons/bitconnect.svg",
+                                          //icon,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 15, horizontal: 15),
+                                      child: Text(
+                                        'QR Kod Tarayıcı',
+                                        //text,
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle: FontStyle.italic,
+                                          color: Colors.grey.shade800,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Align(
+                                        alignment: Alignment.centerRight,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 8),
+                                                child: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_right_sharp,
+                                                  size: 23,
+                                                ))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xfff1f1f1),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: SizedBox(
+                                        height: 23,
+                                        width: 23,
+                                        child: SvgPicture.asset(
+                                          "assets/icons/bitconnect.svg",
+                                          //icon,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 15, horizontal: 15),
+                                      child: Text(
+                                        'Mağaza',
+                                        //text,
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle: FontStyle.italic,
+                                          color: Colors.grey.shade800,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Align(
+                                        alignment: Alignment.centerRight,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 8),
+                                                child: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_right_sharp,
+                                                  size: 23,
+                                                ))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(8),
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xfff1f1f1),
+                                        borderRadius: BorderRadius.circular(10),
+                                      ),
+                                      child: SizedBox(
+                                        height: 23,
+                                        width: 23,
+                                        child: SvgPicture.asset(
+                                          "assets/icons/bitconnect.svg",
+                                          //icon,
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 15, horizontal: 15),
+                                      child: Text(
+                                        'Güvenli Çıkış',
+                                        //text,
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          fontStyle: FontStyle.italic,
+                                          color: Colors.grey.shade800,
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Align(
+                                        alignment: Alignment.centerRight,
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 8),
+                                                child: Icon(
+                                                  Icons
+                                                      .keyboard_arrow_right_sharp,
+                                                  size: 23,
+                                                ))
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ])),
+                            ]),
+                      ),
+                    ),
+                  );
+                },
+              );
+            },
             child: Container(
               padding: const EdgeInsets.symmetric(
                 vertical: 18,
@@ -91,16 +598,17 @@ class Profile extends StatelessWidget {
                             ],
                           ),
                           child: CircleAvatar(
-                              backgroundColor: Colors.grey[800],
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(60),
-                                child: Image.asset(
-                                  "assets/images/profile.jpg",
-                                  height: 120,
-                                  width: 120,
-                                  fit: BoxFit.cover,
-                                ),
-                              )),
+                            backgroundColor: Colors.grey[800],
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(60),
+                              child: Image.asset(
+                                "assets/images/profile.jpg",
+                                height: 120,
+                                width: 120,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
                         ),
                         Positioned(
                           right: 0,
@@ -156,7 +664,7 @@ class Profile extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.all(5),
                           child: Text(
-                            "seyfullah özcan",
+                            "seyfullah_ozcan",
                             style: TextStyle(
                               fontSize: 14,
                               fontStyle: FontStyle.italic,
@@ -164,7 +672,7 @@ class Profile extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         InkWell(
@@ -417,7 +925,6 @@ class Profile extends StatelessWidget {
                 ),
               ),
 
-              //_buildCityNameLength(), //Şehir, Ad, Şikayet sayısı
               //heştekler
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
@@ -525,6 +1032,7 @@ class Profile extends StatelessWidget {
                   ),
                 ]),
               ),
+              //3 nokta işareti
               SvgPicture.asset(
                 "assets/icons/more-horizontal.svg",
                 height: 20,

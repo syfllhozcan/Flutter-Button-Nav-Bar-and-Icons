@@ -91,7 +91,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
             ),
             //-----------------------------İşletme Adı
             Container(
-              margin: const EdgeInsets.all(10),
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -155,7 +155,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
             ),
             //-----------------------------Sektörler
             Container(
-              margin: const EdgeInsets.all(10),
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -220,7 +220,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
             //-----------------------------Organizasyon Türü
             Container(
               width: double.infinity,
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               padding: const EdgeInsets.symmetric(horizontal: 20),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -265,7 +265,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
             ),
             //-----------------------------Hakkında
             Container(
-              margin: const EdgeInsets.all(10),
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -329,7 +329,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
             ),
             //-----------------------------Kurumsal Telefon
             Container(
-              margin: const EdgeInsets.all(10),
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -393,7 +393,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
             ),
             //-----------------------------Kurumsal Mail
             Container(
-              margin: const EdgeInsets.all(10),
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -457,7 +457,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
             ),
             //-----------------------------Konum Oluştur Search
             Container(
-              margin: const EdgeInsets.all(10),
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -521,12 +521,11 @@ class _FirmaProfilState extends State<FirmaProfil> {
             ),
 
             //-----------------------------Toplantı Onay Buttonu
-
-            /* InkWell(
+             InkWell(
               child: Container(
                 width: double.infinity,
                 padding:const EdgeInsets.all(15),
-                margin:const EdgeInsets.symmetric(horizontal: 20),
+                margin:const EdgeInsets.symmetric(horizontal: 20,vertical: 10,),
                 decoration: BoxDecoration(
                   color: const Color(0xFF5A60FF),
                   borderRadius: BorderRadius.circular(10),
@@ -550,7 +549,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
                 ),
               ),
             ),
-            */ //-----------------------------En Alt Boşluk
+             //-----------------------------En Alt Boşluk
             const SizedBox(
               height: 75,
             ),

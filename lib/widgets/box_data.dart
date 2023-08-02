@@ -93,7 +93,7 @@ class BoxData extends StatelessWidget {
                         "assets/icons/right-arrow.svg",
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ],
