@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class FirmaProfil extends StatefulWidget {
-  FirmaProfil({super.key});
+class FirmaEkle extends StatefulWidget {
+  FirmaEkle({super.key});
 
   @override
-  State<FirmaProfil> createState() => _FirmaProfilState();
+  State<FirmaEkle> createState() => _FirmaEkleState();
 }
 
-class _FirmaProfilState extends State<FirmaProfil> {
+class _FirmaEkleState extends State<FirmaEkle> {
   //TextEditingController _soyad = TextEditingController();
   
   String selectedValue = 'Organizasyon Türü';  // Başlangıçta seçili değer
@@ -520,7 +520,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
               ]),
             ),
 
-            //-----------------------------Toplantı Onay Buttonu
+            //-----------------------------Onay Buttonu
              InkWell(
               child: Container(
                 width: double.infinity,
@@ -539,7 +539,7 @@ class _FirmaProfilState extends State<FirmaProfil> {
                   ),
                 child:const Center(
                   child: Text(
-                    'Toplantıyı Oluştur',
+                    'Oluştur',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,

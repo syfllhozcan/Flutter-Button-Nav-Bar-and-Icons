@@ -87,8 +87,8 @@ class BoxData extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: SizedBox(
-                      height: 20,
-                      width: 20,
+                      height: 15,
+                      width: 15,
                       child: SvgPicture.asset(
                         "assets/icons/right-arrow.svg",
                       ),

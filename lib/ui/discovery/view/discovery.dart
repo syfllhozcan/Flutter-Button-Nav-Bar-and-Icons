@@ -133,13 +133,12 @@ class Discovery extends StatelessWidget {
               ),
             ]),
           ),
-          SizedBox(
-            height: 20,
-          ),
+      
           Expanded(
             child: ListView(
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
+              
               children: [
                 Container(
                     padding:

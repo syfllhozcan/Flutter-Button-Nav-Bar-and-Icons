@@ -2,14 +2,15 @@ import 'package:button_nav_bar/ui/direct_message/view/direct_message_home.dart';
 import 'package:button_nav_bar/ui/firma_profil/view/firma_profil.dart';
 import 'package:button_nav_bar/ui/meeting/view/meeting.dart';
 import 'package:button_nav_bar/ui/notes/view/notes_page.dart';
+import 'package:button_nav_bar/ui/profil/view/profile.dart';
 
 import 'package:button_nav_bar/ui/sayfa/view/sayfa.dart';
 import 'package:button_nav_bar/widgets/box_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class Profile extends StatelessWidget {
-  Profile({super.key});
+class FirmaProfil extends StatelessWidget {
+  FirmaProfil({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +20,9 @@ class Profile extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xfff1f1f1),
         title: const Text(
-          "My Profile",
+          "Firma Profili",
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 16,
             color: Colors.black87,
             //fontStyle: FontStyle.italic,
           ),
@@ -565,181 +566,58 @@ class Profile extends StatelessWidget {
               Container(
                 width: double.infinity,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-                /*decoration: BoxDecoration(
-                  color: Colors.white,
-                  boxShadow: [
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(60),
+                        boxShadow: [
                           BoxShadow(
                             color: Colors.grey.withOpacity(0.6),
                             blurRadius: 10,
                             offset: const Offset(0, 10),
                           ),
                         ],
-                ),
-                */
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Stack(
-                      children: [
-                        Container(
-                          height: 120,
-                          width: 120,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(60),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.6),
-                                blurRadius: 10,
-                                offset: const Offset(0, 10),
-                              ),
-                            ],
-                          ),
-                          child: CircleAvatar(
-                            backgroundColor: Colors.grey[800],
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(60),
-                              child: Image.asset(
-                                "assets/images/profile.jpg",
-                                height: 120,
-                                width: 120,
-                                fit: BoxFit.cover,
-                              ),
-                            ),
+                      ),
+                      child: CircleAvatar(
+                        backgroundColor: Colors.grey[800],
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(60),
+                          child: Image.asset(
+                            "assets/images/profile.jpg",
+                            height: 120,
+                            width: 120,
+                            fit: BoxFit.cover,
                           ),
                         ),
-                        Positioned(
-                          right: 0,
-                          bottom: 0,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              color: Colors.white,
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.8),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 10),
-                                ),
-                              ],
-                            ),
-                            child: GestureDetector(
-                              onTap: () {},
-                              child: CircleAvatar(
-                                backgroundColor: Colors.white,
-                                radius: 14,
-                                child: SvgPicture.asset(
-                                  "assets/icons/basic-camera.svg",
-                                  height: 17,
-                                  width: 17,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                     /*const SizedBox(
                       width: 15,
                     ),*/
-                    Column(
-                      //mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(5),
-                          child: Text(
-                            "Seyfullah Özcan",
-                            style: TextStyle(
-                              fontSize: 17,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w700,
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          ),
+                    Container(
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        "Pindubi",
+                        style: TextStyle(
+                          fontSize: 17,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w700,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        Container(
-                          padding: EdgeInsets.all(5),
-                          child: Text(
-                            "seyfullah_ozcan",
-                            style: TextStyle(
-                              fontSize: 14,
-                              fontStyle: FontStyle.italic,
-                              color: Colors.black87,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 5,
-                        ),
-                        InkWell(
-                          onTap: () => Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => FirmaProfil(),
-                            ),
-                          ),
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 5),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.3),
-                                  blurRadius: 10,
-                                  offset: const Offset(0, 10),
-                                ),
-                              ],
-                            ),
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  "assets/images/logo.jpg",
-                                  height: 20,
-                                  width: 20,
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 5),
-                                  child: Text(
-                                    "Sia Teknoloji",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontStyle: FontStyle.italic,
-                                      color: Colors.black87,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                     Container(
-                      height: 36,
-                      width: 36,
-                      //alignment: Alignment.bottomLeft,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(18),
-                        //color: Colors.white,
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            blurRadius: 10,
-                            offset: const Offset(0, 10),
-                          ),
-                        ],
-                      ),
-                      child: CircleAvatar(
-                        backgroundColor: Colors.white,
-                        //radius: 14,
-                        child: SvgPicture.asset(
-                          "assets/icons/pencil.svg",
-                          //"assets/icons/pen.svg",
-                          height: 17,
-                          width: 17,
+                      padding: const EdgeInsets.all(0),
+                      child: Text(
+                        "Mobile App",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontStyle: FontStyle.italic,
                           color: Colors.black87,
                         ),
                       ),
@@ -749,8 +627,7 @@ class Profile extends StatelessWidget {
               ),
               //Toplantı, Bağlantı, Mesaj
               Container(
-                margin:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                margin: const EdgeInsets.symmetric(vertical: 0, horizontal: 20),
                 child: Row(
                   children: [
                     Expanded(
@@ -1241,307 +1118,571 @@ class Profile extends StatelessWidget {
       ),
     );
   }
-
-/*
-  Container _buildCityNameLength() {
-    return Container(
-      margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-      child: Row(
-        children: [
-          Expanded(
-            child: Container(
-              height: 70,
-              //width: 210,
-              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-              //margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.3),
-                    blurRadius: 10,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
-              ),
-              child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          '18',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.italic,
-                            color: Colors.grey.shade800,
-                          ),
-                        ),
-                        /*SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: SvgPicture.asset(
-                        "assets/icons/marker.svg",
-                      ),
-                    ),*/
-                        Text(
-                          'Toplantı',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.italic,
-                            color: Colors.grey.shade800,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const VerticalDivider(
-                      color: Colors.grey,
-                      endIndent: 10,
-                      indent: 10,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          '7',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.italic,
-                            color: Colors.grey.shade800,
-                          ),
-                        ),
-                        /*SizedBox(
-                      height: 22,
-                      width: 22,
-                      child: SvgPicture.asset(
-                        "assets/icons/profile.svg",
-                      ),
-                    ),*/
-                        Text(
-                          "Bağlantı",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            fontStyle: FontStyle.italic,
-                            color: Colors.grey.shade800,
-                          ),
-                        ),
-                      ],
-                    ),
-                    /*const VerticalDivider(
-                  color: Colors.grey,
-                  endIndent: 10,
-                  indent: 10,
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SizedBox(
-                      height: 20,
-                      width: 20,
-                      child: SvgPicture.asset(
-                        "assets/icons/bookmark.svg",
-                      ),
-                    ),
-                    Text(
-                      "8",
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.italic,
-                        color: Colors.grey.shade800,
-                      ),
-                    ),
-                  ],
-                ),
-              */
-                  ]),
-            ),
-          ),
-          const SizedBox(
-            width: 15,
-          ),
-          InkWell(
-            
-            child: Container(
-              height: 70,
-              //width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.3),
-                    blurRadius: 10,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SizedBox(
-                    height: 22,
-                    width: 22,
-                    child: SvgPicture.asset(
-                      "assets/icons/message-svgrepo-com.svg",
-                    ),
-                  ),
-                  Text(
-                    "Mesaj",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.italic,
-                      color: Colors.grey.shade800,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-*/
 }
 
 
 
 /*
+// ignore_for_file: must_be_immutable
 
-import 'package:button_nav_bar/ui/activity_home/widgets/about_meeting.dart';
-import 'package:button_nav_bar/ui/activity_home/widgets/meeting_home_items.dart';
-import 'package:button_nav_bar/ui/activity_home/widgets/meeting_home_up_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-class ActivityHome extends StatelessWidget {
-  ActivityHome({super.key});
+class FirmaProfil extends StatefulWidget {
+  FirmaProfil({super.key});
 
-  //kullanılabilir
-  List midleItems = [
-    {
-      "icon": "assets/icons/navigation.svg",
-      //"page": const ControPanelPage(),
-      "title": "Kontrol Paneli"
-    },
-    {
-      "icon": "assets/icons/home.svg",
-      //"page": const AnnouncementsPage(),
-      "title": "Duyurular"
-    },
-    {
-      "icon": "assets/icons/profile.svg",
-      // "page": const EventSchedulePage(),
-      "title": "Etkinlik Programı"
-    },
-    {
-      "icon": "assets/icons/navigation.svg",
-      // "page": const MyEventNotesPage(),
-      "title": "Etkinlik Notlarım"
-    },
-    {
-      "icon": "assets/icons/home.svg",
-      // "page": const MyTalksPage(),
-      "title": "Görüşmelerim"
-    },
-    {
-      "icon": "assets/icons/home.svg",
-      // "page": const SupportPage(),
-      "title": "Destek"
-    },
-    {
-      "icon": "assets/icons/profile.svg",
-      // "page": const QuestionnairePage(),
-      "title": "Anket"
-    },
-    {
-      "icon": "assets/icons/profile.svg",
-      // "page": const CompaniesPage(),
-      "title": "Firmalar"
-    },
-    {
-      "icon": "assets/icons/profile.svg",
-      // "page": const ParticipantsPage(),
-      "title": "Katılımcılar"
-    },
+  @override
+  State<FirmaProfil> createState() => _FirmaProfilState();
+}
+
+class _FirmaProfilState extends State<FirmaProfil> {
+  //TextEditingController _soyad = TextEditingController();
+  
+  String selectedValue = 'Organizasyon Türü';  // Başlangıçta seçili değer
+ 
+  List<String> dropdownValues = [
+    'Organizasyon Türü',
+    'Şahıs Şirketi',
+    'Limited Şirket',
+    'Anonim Şirket',
+    'Anonim Şirket (Halka Açık)',
+    'Holding',
+    'Holding (Halka Açık)',
+    'Diğer Ticari Ortaklıklar',
+    'Oda veya Borsa',
+    'Sivil Toplum Kuruluşu',
+    'Üniversite',
+    'Kamu Kurumu',
+    'Siyasi Parti',
+    'Diğer',
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.white,
-          leading: IconButton(
-            color: Colors.black,
-            icon: const Icon(Icons.arrow_back_ios_new),
-            onPressed: () {
-              // Sol ikon için tıklama işlemleri
-            },
+      backgroundColor: const Color(0xfff1f1f1),
+      appBar: AppBar(
+        leading: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+          },
+          child: const Icon(
+            Icons.arrow_back_ios_sharp,
+            color: Colors.black87,
+            size: 23,
           ),
-          actions: [
-            IconButton(
-              color: Colors.black,
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-                // Sağ ikon için tıklama işlemleri
-              },
-            ),
-          ],
-          title: Text(
-            'Etkinlik Sonlandı',
-            style: TextStyle(
-              color: Colors.black,
-            ),
-          ),
-          centerTitle: true,
         ),
-        body: Column(
+        backgroundColor: const Color(0xfff1f1f1),
+        elevation: 0,
+        title: Image.asset(
+          "assets/images/logo_beetinq.png",
+          height: 30,
+          fit: BoxFit.cover,
+        ),
+
+        /*
+        title: Text(
+          '',
+          style: TextStyle(
+            color: Colors.black87,
+            fontSize: 18,
+          ),
+        ),
+        */
+        centerTitle: true,
+      ),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
           children: [
-            MeetingHomeUpCard(),
-            const SizedBox(height: 20),
-            Expanded(
-              child: ListView(
-                shrinkWrap: true,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
+            //-----------------------------Üst Alan Boşluğu
+            const SizedBox(
+              height: 20,
+            ),
+            //-----------------------------İşletme Oluştur Text
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  'İşletme Oluştur',
+                  style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            //-----------------------------İşletme Adı
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              child: Row(children: [
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 0, bottom: 0),
+                    padding: const EdgeInsets.all(0),
                     decoration: BoxDecoration(
-                      color: const Color(0xfff6f8f7),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: ListView.builder(
-                      physics: const NeverScrollableScrollPhysics(),
-                      shrinkWrap: true,
-                      itemCount: midleItems.length,
-                      itemBuilder: (context, index) => MeetingHomeItems(
-                        title: midleItems[index]['title'],
-                        icon: midleItems[index]['icon'],
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.black12,
+                        width: 1.0,
                       ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(width: 10),
+                        SvgPicture.asset(
+                          "assets/icons/build.svg",
+                          height: 20,
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            expands: false,
+                            onChanged: (value) {},
+                            style: const TextStyle(fontSize: 16),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "İşletme Adı..",
+                              contentPadding: EdgeInsets.all(0),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                  const SizedBox(
-                    height: 20,
+                ),
+                const SizedBox(width: 10),
+                /*
+                InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    FontAwesomeIcons.filter,
+                    color: theme.primaryColor,
+                    size: 20,
                   ),
-                  AboutMeeting(),
-                  const SizedBox(
-                    height: 70,
+                ),
+                */
+              ]),
+            ),
+            //-----------------------------Sektörler
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              child: Row(children: [
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 0, bottom: 0),
+                    padding: const EdgeInsets.all(0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.black12,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(width: 10),
+                        SvgPicture.asset(
+                          "assets/icons/sektor.svg",
+                          height: 28,
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            expands: false,
+                            onChanged: (value) {},
+                            style: const TextStyle(fontSize: 16),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Sektörler..",
+                              contentPadding: EdgeInsets.all(0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                /*
+                InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    FontAwesomeIcons.filter,
+                    color: theme.primaryColor,
+                    size: 20,
+                  ),
+                ),
+                */
+              ]),
+            ),
+            //-----------------------------Organizasyon Türü
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    blurRadius: 10,
+                    offset: const Offset(0, 10),
                   ),
                 ],
               ),
+              child: DropdownButton<String>(
+                value: selectedValue,
+                icon: const Icon(Icons.arrow_drop_down),
+                iconSize: 28,
+                elevation: 16,
+                isExpanded: true,
+                style: const TextStyle(
+                  fontSize: 16,
+                  color: Colors.black87,
+                ),
+                underline: const SizedBox(),
+                onChanged: (newValue) {
+                  setState(() {
+                    selectedValue = newValue!;
+                  });
+                },
+                items: dropdownValues
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
             ),
+            //-----------------------------3 nokta işareti svg
+            SvgPicture.asset(
+              "assets/icons/more-horizontal.svg",
+              height: 20,
+            ),
+            //-----------------------------Hakkında
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              child: Row(children: [
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 0, bottom: 0),
+                    padding: const EdgeInsets.all(0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.black12,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(width: 10),
+                        SvgPicture.asset(
+                          "assets/icons/info.svg",
+                          height: 20,
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            expands: false,
+                            onChanged: (value) {},
+                            style: const TextStyle(fontSize: 16),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Hakkında..",
+                              contentPadding: EdgeInsets.all(0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                /*
+                InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    FontAwesomeIcons.filter,
+                    color: theme.primaryColor,
+                    size: 20,
+                  ),
+                ),
+                */
+              ]),
+            ),
+            //-----------------------------Kurumsal Telefon
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              child: Row(children: [
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 0, bottom: 0),
+                    padding: const EdgeInsets.all(0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.black12,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(width: 10),
+                        SvgPicture.asset(
+                          "assets/icons/phone.svg",
+                          height: 20,
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            expands: false,
+                            onChanged: (value) {},
+                            style: const TextStyle(fontSize: 16),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Kurumsal Telefon..",
+                              contentPadding: EdgeInsets.all(0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                /*
+                InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    FontAwesomeIcons.filter,
+                    color: theme.primaryColor,
+                    size: 20,
+                  ),
+                ),
+                */
+              ]),
+            ),
+            //-----------------------------Kurumsal Mail
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              child: Row(children: [
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 0, bottom: 0),
+                    padding: const EdgeInsets.all(0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.black12,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(width: 10),
+                        SvgPicture.asset(
+                          "assets/icons/message.svg",
+                          height: 20,
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            expands: false,
+                            onChanged: (value) {},
+                            style: const TextStyle(fontSize: 16),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Kurumsal Mail..",
+                              contentPadding: EdgeInsets.all(0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                /*
+                InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    FontAwesomeIcons.filter,
+                    color: theme.primaryColor,
+                    size: 20,
+                  ),
+                ),
+                */
+              ]),
+            ),
+            //-----------------------------Konum Oluştur Search
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              child: Row(children: [
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 0, bottom: 0),
+                    padding: const EdgeInsets.all(0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(
+                        color: Colors.black12,
+                        width: 1.0,
+                      ),
+                      borderRadius: BorderRadius.circular(10.0),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          blurRadius: 10,
+                          offset: const Offset(0, 10),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        const SizedBox(width: 10),
+                        SvgPicture.asset(
+                          "assets/icons/location.svg",
+                          height: 20,
+                        ),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: TextField(
+                            textAlign: TextAlign.left,
+                            expands: false,
+                            onChanged: (value) {},
+                            style: const TextStyle(fontSize: 16),
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "Konum..",
+                              contentPadding: EdgeInsets.all(0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 10),
+                /*
+                InkWell(
+                  onTap: () {},
+                  child: Icon(
+                    FontAwesomeIcons.filter,
+                    color: theme.primaryColor,
+                    size: 20,
+                  ),
+                ),
+                */
+              ]),
+            ),
+
+            //-----------------------------Onay Buttonu
+             InkWell(
+              child: Container(
+                width: double.infinity,
+                padding:const EdgeInsets.all(15),
+                margin:const EdgeInsets.symmetric(horizontal: 20,vertical: 10,),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF5A60FF),
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.2),
+                    blurRadius: 10,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+                  ),
+                child:const Center(
+                  child: Text(
+                    'Oluştur',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+                ),
+              ),
+            ),
+             //-----------------------------En Alt Boşluk
+            const SizedBox(
+              height: 75,
+            ),
+
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
 */
-
