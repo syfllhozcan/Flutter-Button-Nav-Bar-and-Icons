@@ -49,7 +49,7 @@ class Meeting extends StatelessWidget {
         children: [
           //list-horizontal Spnsorlar veya katılımcılar
           Container(
-            height: 70,
+            height: 80,
             margin: const EdgeInsets.symmetric(
               horizontal: 20,
             ),
@@ -77,7 +77,7 @@ class Meeting extends StatelessWidget {
                   backgroundImage: AssetImage(
                     "assets/images/profile$index.jpg",
                   ),
-                  radius: 30,
+                  radius: 35,
                 ),
               ),
             ),

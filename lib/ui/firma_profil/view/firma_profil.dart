@@ -588,7 +588,7 @@ class FirmaProfil extends StatelessWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(60),
                           child: Image.asset(
-                            "assets/images/profile.jpg",
+                            "assets/images/p.jpg",
                             height: 120,
                             width: 120,
                             fit: BoxFit.cover,
@@ -622,6 +622,31 @@ class FirmaProfil extends StatelessWidget {
                         ),
                       ),
                     ),
+                    const SizedBox(height: 6),
+                    Container(
+                      padding: const EdgeInsets.all(0),
+                      child: Text(
+                        "ornekmail@gmail.com",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    /*
+                    Container(
+                      padding: const EdgeInsets.all(0),
+                      child: Text(
+                        "05372345678",
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    */
                   ],
                 ),
               ),

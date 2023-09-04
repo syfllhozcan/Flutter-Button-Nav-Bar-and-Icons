@@ -7,12 +7,12 @@ class Anasayfa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:const Color(0xfff1f1f1),
+      backgroundColor: const Color(0xfff1f1f1),
       appBar: AppBar(
-        backgroundColor:const Color(0xfff1f1f1),
+        backgroundColor: const Color(0xfff1f1f1),
         title: Image.asset(
           "assets/images/logo_beetinq.png",
-          height: 30,
+          height: 28,
           fit: BoxFit.cover,
         ),
         centerTitle: true,
@@ -24,19 +24,18 @@ class Anasayfa extends StatelessWidget {
           child: const Icon(
             Icons.arrow_back_ios_sharp,
             color: Colors.black87,
-            size: 23,
+            size: 18,
           ),
         ),
         actions: [
           InkWell(
-            child: Container(
-              padding: const EdgeInsets.symmetric(
-                vertical: 18,
-                horizontal: 20,
-              ),
-              child: SvgPicture.asset("assets/icons/menu2.svg"),
+            child: SvgPicture.asset(
+              "assets/icons/menu2.svg",
+              height: 18,
+              width: 18,
             ),
-          )
+          ),
+          const SizedBox(width: 20),
         ],
       ),
       body: Column(
@@ -52,7 +51,7 @@ class Anasayfa extends StatelessWidget {
                 ),
                 //----------------------------Meeting Bilgiileri Text
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -384,11 +383,11 @@ class Anasayfa extends StatelessWidget {
                     )),
                 //----------------------------Boşluk
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 //----------------------------Activity Bilgileri Text
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -405,7 +404,8 @@ class Anasayfa extends StatelessWidget {
                 Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    margin: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
@@ -621,11 +621,11 @@ class Anasayfa extends StatelessWidget {
                     )),
                 //---------------------------- Boşluk
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 //---------------------------- Diğer İşlemeler
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -671,7 +671,7 @@ class Anasayfa extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: SvgPicture.asset(
-                              "assets/icons/profile.svg",
+                              "assets/icons/setting-border.svg",
                               height: 20,
                               width: 20,
                             ),
@@ -680,7 +680,7 @@ class Anasayfa extends StatelessWidget {
                             width: 10,
                           ),
                           Text(
-                            'Kontrol Paneli',
+                            'Ayarlar',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.black87,

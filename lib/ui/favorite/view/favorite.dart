@@ -105,14 +105,14 @@ class _FavoriteState extends State<Favorite> {
           child: const Icon(
             Icons.arrow_back_ios_sharp,
             color: Colors.black87,
-            size: 23,
+            size: 18,
           ),
         ),
         backgroundColor: const Color(0xfff1f1f1),
         elevation: 0,
         title: Image.asset(
           "assets/images/logo_beetinq.png",
-          height: 30,
+          height: 28,
           fit: BoxFit.cover,
         ),
 
@@ -145,7 +145,7 @@ class _FavoriteState extends State<Favorite> {
                   style: TextStyle(
                     color: Colors.black87,
                     fontSize: 17,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ),

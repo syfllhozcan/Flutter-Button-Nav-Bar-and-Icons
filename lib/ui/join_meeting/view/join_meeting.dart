@@ -20,14 +20,14 @@ class JoinMeeting extends StatelessWidget {
           child: const Icon(
             Icons.arrow_back_ios_sharp,
             color: Colors.black87,
-            size: 23,
+            size: 18,
           ),
         ),
         backgroundColor: const Color(0xfff1f1f1),
         elevation: 0,
         title: Image.asset(
           "assets/images/logo_beetinq.png",
-          height: 30,
+          height: 28,
           fit: BoxFit.cover,
         ),
         centerTitle: true,
@@ -51,8 +51,8 @@ class JoinMeeting extends StatelessWidget {
                     radius: const Radius.circular(10),
                     color: Colors.black54,
                     child: Container(
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 10, vertical: 6),
                       decoration: BoxDecoration(),
                       child: Text(
                         '10:00 - 10:40   12 April 2023',
@@ -114,7 +114,7 @@ class JoinMeeting extends StatelessWidget {
                 'Lorem Ipsum, kısaca Lipsum, masaüstü yayıncılık ve basın yayın sektöründe kullanılan taklit yazı bloğu olarak tanımlanır. Lipsum, oluşturulacak şablon ve taslaklarda içerik yerine geçerek yazı bloğunu doldurmak için kullanılır.',
                 style: TextStyle(
                   fontSize: 14,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w400,
                   color: Colors.black87,
                   wordSpacing: 3,
                   fontStyle: FontStyle.italic,
@@ -142,6 +142,28 @@ class JoinMeeting extends StatelessWidget {
                 ),
               ),
             ),
+            Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: Row(
+                children: [
+                  SvgPicture.asset("assets/icons/location.svg",height: 18,width: 14,),
+                 const SizedBox(width: 5),
+                  Text(
+                    'AKM Konferans Salonu',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black87,
+                      wordSpacing: 3,
+                      //fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+           
             //alt kutular Davet, Gündem
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -353,8 +375,9 @@ class JoinMeeting extends StatelessWidget {
                           color: Colors.green,
                           height: 18,
                         ),
+                        const SizedBox(width: 5),
                         const Text(
-                          "Kabul Et",
+                          "Katıl",
                           style: TextStyle(
                             fontSize: 15,
                             color: Colors.black87,
@@ -379,7 +402,7 @@ class JoinMeeting extends StatelessWidget {
                     width: 100,
                     padding: const EdgeInsets.symmetric(vertical: 15),
                     //margin: const EdgeInsets.all(10),
-      
+
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -389,6 +412,7 @@ class JoinMeeting extends StatelessWidget {
                           color: Colors.red,
                           height: 18,
                         ),
+                        const SizedBox(width: 5),
                         const Text(
                           "Red Et",
                           style: TextStyle(

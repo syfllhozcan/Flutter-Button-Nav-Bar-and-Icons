@@ -16,7 +16,7 @@ class Discovery extends StatelessWidget {
           fit: BoxFit.cover,
         ),
         leading: InkWell(
-          onTap: (){
+          onTap: () {
             Navigator.pop(context);
           },
           child: const Icon(
@@ -133,12 +133,10 @@ class Discovery extends StatelessWidget {
               ),
             ]),
           ),
-      
           Expanded(
             child: ListView(
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
-              
               children: [
                 Container(
                     padding:
@@ -157,38 +155,38 @@ class Discovery extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        Container(
-                          color: Colors.white,
-                          padding: const EdgeInsets.all(0),
-                          margin: const EdgeInsets.symmetric(
-                              horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: const Color(0xffE8DAEF),
-                                borderRadius: BorderRadius.circular(5),
+                        InkWell(
+                          child: Container(
+                            color: Colors.white,
+                            padding: const EdgeInsets.all(0),
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: const Color(0xffE8DAEF),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/filter1.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                              child: SvgPicture.asset(
-                                "assets/icons/filter1.svg",
-                                height: 20,
-                                width: 20,
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Kontrol Paneli',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
-                              ),
-                            )
-                          ]),
+                              const SizedBox(width: 10),
+                              Text(
+                                'Kontrol Paneli',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
                         Container(
                           color: Colors.white,
@@ -433,7 +431,7 @@ class Discovery extends StatelessWidget {
                                   vertical: 10, horizontal: 5),
                               decoration: BoxDecoration(
                                 //color: Colors.white,
-                                color:const Color(0xffD6EAF8),
+                                color: const Color(0xffD6EAF8),
                                 borderRadius: BorderRadius.circular(5),
                               ),
                               child: SvgPicture.asset(
@@ -613,7 +611,7 @@ class Discovery extends StatelessWidget {
                         Container(
                           alignment: Alignment.centerLeft,
                           padding: const EdgeInsets.symmetric(vertical: 5),
-                          child:const Text(
+                          child: const Text(
                             "Etkinliği Paylaş",
                             style: TextStyle(
                               fontSize: 18,
@@ -628,10 +626,9 @@ class Discovery extends StatelessWidget {
                         Container(
                           padding: const EdgeInsets.all(5),
                           decoration: BoxDecoration(
-                            color:const Color(0xfff1f1f1),
+                            color: const Color(0xfff1f1f1),
                             borderRadius: BorderRadius.circular(5),
                           ),
-                        
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [

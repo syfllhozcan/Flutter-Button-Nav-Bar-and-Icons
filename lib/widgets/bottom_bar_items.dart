@@ -29,22 +29,24 @@ class BottomBarItem extends StatelessWidget {
             padding: const EdgeInsets.all(7),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
-              color: isActive ? Colors.white.withOpacity(.1) : Colors.transparent,
+              color:
+                  isActive ? Color(0xfff1f1f1) : Colors.transparent,
             ),
             child: SvgPicture.asset(
               icon,
-              color: isActive ? activeColor : Colors.white70,
+              color: isActive ? activeColor : color,
               width: 25,
               height: 25,
             ),
           ),
           Positioned(
-              bottom: -8,
-              child: Icon(
-                Icons.arrow_drop_up,
-                size: 20.0,
-                color: isActive ? activeColor : Colors.transparent,
-              )),
+            bottom: -8,
+            child: Icon(
+              Icons.arrow_drop_up,
+              size: 20.0,
+              color: isActive ? activeColor : Colors.transparent,
+            ),
+          ),
         ]),
       ),
     );

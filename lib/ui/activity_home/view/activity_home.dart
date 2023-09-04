@@ -1,6 +1,9 @@
+import 'package:button_nav_bar/ui/discovery/view/discovery.dart';
+import 'package:button_nav_bar/ui/favorite/view/favorite.dart';
 import 'package:button_nav_bar/ui/firma_ekle/view/fima_ekle.dart';
 import 'package:button_nav_bar/ui/firma_profil/view/firma_profil.dart';
 import 'package:button_nav_bar/ui/join_meeting/view/join_meeting.dart';
+import 'package:button_nav_bar/ui/kesvet/kesvet_view/kesvet_page.dart';
 import 'package:button_nav_bar/ui/sayfa/view/sayfa.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,12 +14,12 @@ class ActivityHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff1f1f1),
+      backgroundColor:const Color(0xfff1f1f1),
       appBar: AppBar(
-        backgroundColor: Color(0xfff1f1f1),
+        backgroundColor:const Color(0xfff1f1f1),
         title: Image.asset(
           "assets/images/logo_beetinq.png",
-          height: 30,
+          height: 28,
           fit: BoxFit.cover,
         ),
         centerTitle: true,
@@ -248,7 +251,11 @@ class ActivityHome extends StatelessWidget {
                           ),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => KesvetPage(),
+                            ),
+                          ),
                           child: Container(
                             color: Colors.white,
                             padding: EdgeInsets.all(0),
@@ -284,7 +291,11 @@ class ActivityHome extends StatelessWidget {
                           ),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => Discovery(),
+                            ),
+                          ),
                           child: Container(
                             color: Colors.white,
                             padding: EdgeInsets.all(0),
@@ -320,11 +331,15 @@ class ActivityHome extends StatelessWidget {
                           ),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => Favorite(),
+                            ),
+                          ),
                           child: Container(
                             color: Colors.white,
-                            padding: EdgeInsets.all(0),
-                            margin: EdgeInsets.symmetric(
+                            padding:const EdgeInsets.all(0),
+                            margin:const EdgeInsets.symmetric(
                                 horizontal: 0, vertical: 0),
                             child: Row(children: [
                               Container(
@@ -718,7 +733,7 @@ class ActivityHome extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: SvgPicture.asset(
-                              "assets/icons/profile.svg",
+                              "assets/icons/setting-border1.svg",
                               height: 20,
                               width: 20,
                             ),
@@ -727,7 +742,7 @@ class ActivityHome extends StatelessWidget {
                             width: 10,
                           ),
                           Text(
-                            'Kontrol Paneli',
+                            'Ayarlar',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.black87,

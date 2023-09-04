@@ -75,7 +75,6 @@ class BoxData extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    //'17  Data',
                     "Detayda Gör",
                     style: TextStyle(
                       fontSize: 15,

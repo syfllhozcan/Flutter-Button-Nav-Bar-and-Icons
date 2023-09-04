@@ -1,6 +1,7 @@
 import 'package:button_nav_bar/ui/discovery/view/discovery.dart';
 import 'package:button_nav_bar/ui/favorite/view/favorite.dart';
 import 'package:button_nav_bar/ui/activity_home/view/activity_home.dart';
+import 'package:button_nav_bar/ui/kesvet/kesvet_view/kesvet_page.dart';
 import 'package:button_nav_bar/ui/profil/view/profile.dart';
 //import 'package:button_nav_bar/theme/colors.dart';
 import 'package:button_nav_bar/widgets/bottom_bar_items.dart';
@@ -23,21 +24,27 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       "title": ""
     },
     {
-      "icon": "assets/icons/navigation.svg",
-      "active_icon": "assets/icons/navigation.svg",
-      "page": Discovery(),
+      "icon": "assets/icons/booking.svg",
+      "active_icon": "assets/icons/booking.svg",
+      "page": Profile(),
       "title": ""
     },
     {
-      "icon": "assets/icons/heart.svg",
-      "active_icon": "assets/icons/heart.svg",
-      "page":  Favorite(),
+      "icon": "assets/icons/kesfet.svg",//navigation.svg
+      "active_icon": "assets/icons/kesfet.svg",
+      "page": KesvetPage(),
+      "title": ""
+    },
+    {
+      "icon": "assets/icons/notification.svg",
+      "active_icon": "assets/icons/notification.svg",
+      "page": Favorite(),
       "title": ""
     },
     {
       "icon": "assets/icons/profile.svg",
       "active_icon": "assets/icons/profile.svg",
-      "page":  Profile(),
+      "page": Profile(),
       "title": ""
     },
   ];
@@ -107,18 +114,24 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
     return Container(
       height: 55,
       width: double.infinity,
-      margin: const EdgeInsets.fromLTRB(25, 0, 25, 15),
-      decoration: BoxDecoration(
+      margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+      decoration:const BoxDecoration(
         //color: bottomBarColor,
-        color: const Color(0xFF5A60FF),
-        borderRadius: BorderRadius.circular(20),
+        //color: const Color(0xFF5A60FF),
+        color: Colors.white,
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+        /*
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
+            color: Colors.grey.withOpacity(0.2),
             blurRadius: 10,
             offset: const Offset(0, 10),
           ),
         ],
+        */
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -131,7 +144,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
                 : barItems[index]["icon"],
             "",
             isActive: activeTab == index,
-            activeColor: Colors.white,
+            activeColor: Colors.black,
             onTap: () {
               onPageChanged(index);
             },
