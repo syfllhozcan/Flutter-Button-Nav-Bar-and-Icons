@@ -507,13 +507,14 @@ class Discovery extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
+                        /*
                         const Divider(
                           height: 1,
                           indent: 100,
                           endIndent: 100,
                           color: Colors.black,
                         ),
-
+*/
                         const SizedBox(
                           height: 20,
                         ),
@@ -599,12 +600,14 @@ class Discovery extends StatelessWidget {
                         const SizedBox(
                           height: 20,
                         ),
+                        /*
                         const Divider(
                           height: 1,
                           indent: 100,
                           endIndent: 100,
                           color: Colors.black,
                         ),
+                        */
                         const SizedBox(
                           height: 20,
                         ),
