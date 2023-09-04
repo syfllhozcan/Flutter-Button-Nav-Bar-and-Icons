@@ -119,11 +119,11 @@ class KesvetPage extends StatelessWidget {
                         ),
                         Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 8),
+                              horizontal: 10, vertical: 6),
                           child: const Text(
                             "Uluslarası Asansör Fuarı",
                             style: TextStyle(
-                              fontSize: 21,
+                              fontSize: 20,
                               color: Colors.black,
                               fontWeight: FontWeight.w500,
                             ),

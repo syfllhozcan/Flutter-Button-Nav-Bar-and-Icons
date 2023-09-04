@@ -12,7 +12,7 @@ class Discovery extends StatelessWidget {
         backgroundColor: const Color(0xfff1f1f1),
         title: Image.asset(
           "assets/images/logo_beetinq.png",
-          height: 30,
+          height: 28,
           fit: BoxFit.cover,
         ),
         leading: InkWell(

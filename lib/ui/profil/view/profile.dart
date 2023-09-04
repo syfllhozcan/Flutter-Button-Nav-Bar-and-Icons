@@ -3,7 +3,7 @@ import 'package:button_nav_bar/ui/firma_profil/view/firma_profil.dart';
 import 'package:button_nav_bar/ui/meeting/view/meeting.dart';
 import 'package:button_nav_bar/ui/notes/view/notes_page.dart';
 
-import 'package:button_nav_bar/ui/sayfa/view/sayfa.dart';
+import 'package:button_nav_bar/ui/anasayfa/view/anasyfa.dart';
 import 'package:button_nav_bar/widgets/box_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

@@ -4,7 +4,7 @@ import 'package:button_nav_bar/ui/firma_ekle/view/fima_ekle.dart';
 import 'package:button_nav_bar/ui/firma_profil/view/firma_profil.dart';
 import 'package:button_nav_bar/ui/join_meeting/view/join_meeting.dart';
 import 'package:button_nav_bar/ui/kesvet/kesvet_view/kesvet_page.dart';
-import 'package:button_nav_bar/ui/sayfa/view/sayfa.dart';
+import 'package:button_nav_bar/ui/anasayfa/view/anasyfa.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -14,12 +14,12 @@ class ActivityHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:const Color(0xfff1f1f1),
+      backgroundColor: const Color(0xfff1f1f1),
       appBar: AppBar(
-        backgroundColor:const Color(0xfff1f1f1),
+        backgroundColor: const Color(0xfff1f1f1),
         title: Image.asset(
           "assets/images/logo_beetinq.png",
-          height: 28,
+          height: 25,
           fit: BoxFit.cover,
         ),
         centerTitle: true,
@@ -55,11 +55,11 @@ class ActivityHome extends StatelessWidget {
               children: [
                 //----------------------------Boşluk
                 const SizedBox(
-                  height: 40,
+                  height: 30,
                 ),
                 //----------------------------Meeting Bilgiileri Text
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -338,8 +338,8 @@ class ActivityHome extends StatelessWidget {
                           ),
                           child: Container(
                             color: Colors.white,
-                            padding:const EdgeInsets.all(0),
-                            margin:const EdgeInsets.symmetric(
+                            padding: const EdgeInsets.all(0),
+                            margin: const EdgeInsets.symmetric(
                                 horizontal: 0, vertical: 0),
                             child: Row(children: [
                               Container(
@@ -446,11 +446,11 @@ class ActivityHome extends StatelessWidget {
                     )),
                 //----------------------------Boşluk
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 //----------------------------Activity Bilgileri Text
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -467,7 +467,8 @@ class ActivityHome extends StatelessWidget {
                 Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                    margin: const EdgeInsets.all(20),
+                    margin: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
@@ -683,11 +684,11 @@ class ActivityHome extends StatelessWidget {
                     )),
                 //---------------------------- Boşluk
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 //---------------------------- Diğer İşlemeler
                 const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Text(

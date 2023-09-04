@@ -51,7 +51,7 @@ class _FirmaEkleState extends State<FirmaEkle> {
         elevation: 0,
         title: Image.asset(
           "assets/images/logo_beetinq.png",
-          height: 30,
+          height: 28,
           fit: BoxFit.cover,
         ),
 
