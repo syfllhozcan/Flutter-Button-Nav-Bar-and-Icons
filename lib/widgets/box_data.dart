@@ -5,12 +5,12 @@ class BoxData extends StatelessWidget {
   final Color color;
   final String icon;
   final String text;
-  final Widget rota;
+  //final Widget rota;
   const BoxData({
     required this.color,
     required this.icon,
     required this.text,
-    required this.rota,
+    //required this.rota,
     super.key,
   });
 
@@ -18,11 +18,13 @@ class BoxData extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: InkWell(
+       /*
         onTap: () => Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => rota,
           ),
         ),
+        */
         child: Container(
           margin: const EdgeInsets.all(10),
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),

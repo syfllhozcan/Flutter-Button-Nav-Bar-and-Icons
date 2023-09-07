@@ -2,6 +2,8 @@ import 'package:button_nav_bar/ui/profil/view/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../widgets/box_data.dart';
+
 class Meeting extends StatelessWidget {
   const Meeting({super.key});
 
@@ -155,6 +157,7 @@ class Meeting extends StatelessWidget {
             ),
           ),
           // 3 Nokta işareti svg
+          /*
           Center(
             child: SvgPicture.asset(
               "assets/icons/more-horizontal.svg",
@@ -162,6 +165,8 @@ class Meeting extends StatelessWidget {
               width: 20,
             ),
           ),
+         */
+
           //Sohbet, Notlarım, Gündem, Kararlar, Dosya, Anket
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -724,59 +729,11 @@ class Meeting extends StatelessWidget {
                             builder: (context) => Profile(),
                           ),
                         ),
-                        child: Container(
-                          margin: const EdgeInsets.all(5),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 15),
-                          decoration: BoxDecoration(
-                            //color: const Color(0xff96d1ee),
-                            color: const Color(0xfffe6e9f),
-                            //color: color,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.3),
-                                blurRadius: 10,
-                                offset: const Offset(0, 10),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(24),
-                                ),
-                                child: SizedBox(
-                                  height: 28,
-                                  width: 28,
-                                  child: SvgPicture.asset(
-                                    "assets/icons/chat.svg",
-                                    //icon,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 15),
-                                child: Text(
-                                  'Sohbet',
-                                  //text,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FontStyle.italic,
-                                    //color: Colors.grey.shade800,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                        child: BoxData(
+                          color: Color(0xff96d1ee),
+                          icon: "assets/icons/chat.svg",
+                          text: "Sohbet",
+                          //rota: Profile(),
                         ),
                       ),
                     ),
@@ -787,122 +744,11 @@ class Meeting extends StatelessWidget {
                             builder: (context) => Profile(),
                           ),
                         ),
-                        child: Container(
-                          margin: const EdgeInsets.all(5),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 15),
-                          decoration: BoxDecoration(
-                            //color: const Color(0xff96d1ee),
-                            color: const Color(0xff439bdb),
-                            //color: color,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.3),
-                                blurRadius: 10,
-                                offset: const Offset(0, 10),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(24),
-                                ),
-                                child: SizedBox(
-                                  height: 28,
-                                  width: 28,
-                                  child: SvgPicture.asset(
-                                    "assets/icons/sort.svg",
-                                    //icon,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 15),
-                                child: Text(
-                                  'Notlarım',
-                                  //text,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FontStyle.italic,
-                                    //color: Colors.grey.shade800,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: InkWell(
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => Profile(),
-                          ),
-                        ),
-                        child: Container(
-                          margin: const EdgeInsets.all(5),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 15),
-                          decoration: BoxDecoration(
-                            //color: const Color(0xff96d1ee),
-                            color: Color(0xff3caa8e),
-                            //color: color,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.3),
-                                blurRadius: 10,
-                                offset: const Offset(0, 10),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(24),
-                                ),
-                                child: SizedBox(
-                                  height: 28,
-                                  width: 28,
-                                  child: SvgPicture.asset(
-                                    "assets/icons/agenda.svg",
-                                    //icon,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 15),
-                                child: Text(
-                                  'Gündem',
-                                  //text,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FontStyle.italic,
-                                    //color: Colors.grey.shade800,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                        child: BoxData(
+                          color: Color(0xfff2ba7b),
+                          icon: "assets/icons/sort.svg",
+                          text: "Notlarım",
+                          //rota: Profile(),
                         ),
                       ),
                     ),
@@ -917,59 +763,11 @@ class Meeting extends StatelessWidget {
                             builder: (context) => Profile(),
                           ),
                         ),
-                        child: Container(
-                          margin: const EdgeInsets.all(5),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 15),
-                          decoration: BoxDecoration(
-                            //color: const Color(0xff96d1ee),
-                            color: const Color(0xffb76fb7),
-                            //color: color,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.3),
-                                blurRadius: 10,
-                                offset: const Offset(0, 10),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(24),
-                                ),
-                                child: SizedBox(
-                                  height: 28,
-                                  width: 28,
-                                  child: SvgPicture.asset(
-                                    "assets/icons/decisions.svg",
-                                    //icon,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 15),
-                                child: Text(
-                                  'Kararlar',
-                                  //text,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FontStyle.italic,
-                                    //color: Colors.grey.shade800,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                        child: BoxData(
+                          color: Color(0xfff2ba7b),
+                          icon: "assets/icons/agenda.svg",
+                          text: "Gündem",
+                          //rota: Profile(),
                         ),
                       ),
                     ),
@@ -980,122 +778,138 @@ class Meeting extends StatelessWidget {
                             builder: (context) => Profile(),
                           ),
                         ),
-                        child: Container(
-                          margin: const EdgeInsets.all(5),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 15),
-                          decoration: BoxDecoration(
-                            //color: const Color(0xff96d1ee),
-                            color: const Color(0xff6684a3),
-                            //color: color,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.3),
-                                blurRadius: 10,
-                                offset: const Offset(0, 10),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(24),
-                                ),
-                                child: SizedBox(
-                                  height: 28,
-                                  width: 28,
-                                  child: SvgPicture.asset(
-                                    "assets/icons/folder1.svg",
-                                    //icon,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 15),
-                                child: Text(
-                                  '1 Dosya',
-                                  //text,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FontStyle.italic,
-                                    //color: Colors.grey.shade800,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
+                        child: BoxData(
+                          color: Color(0xff96d1ee),
+                          icon: "assets/icons/anket.svg",
+                          text: "Kararlar",
+                          //rota: Profile(),
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: InkWell(
-                        onTap: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => Profile(),
-                          ),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Profile(),
                         ),
-                        child: Container(
-                          margin: const EdgeInsets.all(5),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 15),
-                          decoration: BoxDecoration(
-                            //color: const Color(0xff96d1ee),
-                            color: Color.fromARGB(255, 235, 175, 122),
-                            //color: color,
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.3),
-                                blurRadius: 10,
-                                offset: const Offset(0, 10),
+                      ),
+                      child: Container(
+                        margin: const EdgeInsets.all(5),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 8),
+                        decoration: BoxDecoration(
+                          //color: const Color(0xff96d1ee),
+                          color: const Color(0xFF5A60FF),
+                          //color: color,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.3),
+                              blurRadius: 10,
+                              offset: const Offset(0, 10),
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(18),
                               ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.all(10),
-                                decoration: BoxDecoration(
+                              child: SizedBox(
+                                height: 22,
+                                width: 22,
+                                child: SvgPicture.asset(
+                                  "assets/icons/folder1.svg",
+                                  //icon,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 20),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 0),
+                              child: Text(
+                                '1 Dosya',
+                                //text,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                  //color: Colors.grey.shade800,
                                   color: Colors.white,
-                                  borderRadius: BorderRadius.circular(24),
-                                ),
-                                child: SizedBox(
-                                  height: 28,
-                                  width: 28,
-                                  child: SvgPicture.asset(
-                                    "assets/icons/anket.svg",
-                                    //icon,
-                                  ),
                                 ),
                               ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 15),
-                                child: Text(
-                                  '0 Anket',
-                                  //text,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold,
-                                    fontStyle: FontStyle.italic,
-                                    //color: Colors.grey.shade800,
-                                    color: Colors.white,
-                                  ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Profile(),
+                        ),
+                      ),
+                      child: Container(
+                        margin: const EdgeInsets.all(5),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 8),
+                        decoration: BoxDecoration(
+                          //color: const Color(0xff96d1ee),
+                          color: const Color(0xFF5A60FF),
+                          //color: color,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.3),
+                              blurRadius: 10,
+                              offset: const Offset(0, 10),
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(18),
+                              ),
+                              child: SizedBox(
+                                height: 22,
+                                width: 22,
+                                child: SvgPicture.asset(
+                                  "assets/icons/anket.svg",
+                                  //icon,
                                 ),
                               ),
-                            ],
-                          ),
+                            ),
+                            const SizedBox(width: 20),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 0),
+                              child: Text(
+                                '0 Anket',
+                                //text,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                  //color: Colors.grey.shade800,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

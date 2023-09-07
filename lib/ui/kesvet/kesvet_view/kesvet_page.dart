@@ -57,33 +57,33 @@ class KesvetPage extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-            child: Row(
-              children: [
-                Text(
-                  "Etkinlikleri Keşfet",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              child: Row(
+                children: [
+                  Text(
+                    "Etkinlikleri Keşfet",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-                ),
-                Spacer(),
-                Text(
-                  "Tümü",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                )
-              ],
+                  Spacer(),
+                  Text(
+                    "Tümü",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-          Container(
-            height: 240,
-            child: Expanded(
+            SizedBox(
+              height: 240,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 5),
@@ -178,129 +178,130 @@ class KesvetPage extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-            child: Row(
-              children: [
-                Text(
-                  "Toplantılarım",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: Row(
+                children: [
+                  Text(
+                    "Toplantılarım",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-                ),
-                Spacer(),
-                Text(
-                  "Tümü",
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w400,
-                  ),
-                )
-              ],
+                  Spacer(),
+                  Text(
+                    "Tümü",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-          Expanded(
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              itemCount: 8,
-              itemBuilder: (context, index) => Container(
-                padding: const EdgeInsets.all(10),
-                width: 86,
-                margin: const EdgeInsets.only(left: 0, bottom: 15, right: 0),
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.3),
-                      blurRadius: 10,
-                      offset: const Offset(0, 10),
-                    ),
-                  ],
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 90,
-                      decoration: BoxDecoration(
-                        color: const Color(0xffd6d8fe),
-                        borderRadius: BorderRadius.circular(10),
+            SizedBox(
+              height: MediaQuery.of(context).size.height - 350, //377
+              child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                itemCount: 8,
+                itemBuilder: (context, index) => Container(
+                  padding: const EdgeInsets.all(10),
+                  width: 86,
+                  margin: const EdgeInsets.only(left: 0, bottom: 15, right: 0),
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.3),
+                        blurRadius: 10,
+                        offset: const Offset(0, 10),
                       ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            "12 Nis 22",
-                            style: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Text(
-                            "13:30",
-                            style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Text(
-                            "14:45",
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width - 150,
-                          child: Text(
-                            "Etkili İletişim Sanatı Eğitimi",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 90,
+                        decoration: BoxDecoration(
+                          color: const Color(0xffd6d8fe),
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            SvgPicture.asset(
-                              "assets/icons/location.svg",
-                              height: 16,
-                              width: 16,
+                            Text(
+                              "12 Nis 22",
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
-                            Container(
-                              width: MediaQuery.of(context).size.width - 166,
-                              child: Text(
-                                "AKM Konferans Salonu",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                ),
+                            Text(
+                              "13:30",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Text(
+                              "14:45",
+                              style: TextStyle(
+                                fontSize: 13,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ],
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      const SizedBox(width: 10),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width - 150,
+                            child: Text(
+                              "Etkili İletişim Sanatı Eğitimi",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              SvgPicture.asset(
+                                "assets/icons/location.svg",
+                                height: 16,
+                                width: 16,
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width - 166,
+                                child: Text(
+                                  "AKM Konferans Salonu",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 55),
-        ],
+            const SizedBox(height: 55),
+          ],
+        ),
       ),
     );
   }

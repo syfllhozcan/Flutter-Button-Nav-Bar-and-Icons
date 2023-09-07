@@ -957,17 +957,31 @@ class FirmaProfil extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   children: [
-                    const BoxData(
-                      color: Color(0xff96d1ee),
-                      icon: "assets/icons/sort.svg",
-                      text: "Notlarım",
-                      rota: NotesPage(),
+                    InkWell(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => NotesPage(),
+                        ),
+                      ),
+                      child: const BoxData(
+                        color: Color(0xff96d1ee),
+                        icon: "assets/icons/sort.svg",
+                        text: "Notlarım",
+                        //rota: NotesPage(),
+                      ),
                     ),
-                    const BoxData(
-                      color: Color(0xfff2ba7b),
-                      icon: "assets/icons/bitconnect.svg",
-                      text: "Toplantı",
-                      rota: Meeting(),
+                    InkWell(
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => Meeting(),
+                        ),
+                      ),
+                      child: const BoxData(
+                        color: Color(0xfff2ba7b),
+                        icon: "assets/icons/bitconnect.svg",
+                        text: "Toplantı",
+                        //rota: Meeting(),
+                      ),
                     ),
                     //Mavi Kutu
                     /*Container(
