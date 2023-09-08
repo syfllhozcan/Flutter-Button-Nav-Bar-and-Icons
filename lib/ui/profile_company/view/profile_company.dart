@@ -1,8 +1,8 @@
 import 'package:button_nav_bar/ui/direct_message/view/direct_message_home.dart';
-import 'package:button_nav_bar/ui/firma_profil/view/firma_profil.dart';
+import 'package:button_nav_bar/ui/profile_company/view/profile_company.dart';
 import 'package:button_nav_bar/ui/meeting/view/meeting.dart';
 import 'package:button_nav_bar/ui/notes/view/notes_page.dart';
-import 'package:button_nav_bar/ui/profil/view/profile.dart';
+import 'package:button_nav_bar/ui/profile/view/profile.dart';
 
 import 'package:button_nav_bar/ui/anasayfa/view/anasyfa.dart';
 import 'package:button_nav_bar/widgets/box_data.dart';

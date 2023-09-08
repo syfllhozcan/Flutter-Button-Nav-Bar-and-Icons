@@ -1,8 +1,8 @@
-import 'package:button_nav_bar/ui/discovery/view/discovery.dart';
-import 'package:button_nav_bar/ui/favorite/view/favorite.dart';
 import 'package:button_nav_bar/ui/activity_home/view/activity_home.dart';
-import 'package:button_nav_bar/ui/kesvet/kesvet_view/kesvet_page.dart';
-import 'package:button_nav_bar/ui/profil/view/profile.dart';
+import 'package:button_nav_bar/ui/create_meeting/view/create_meeting.dart';
+import 'package:button_nav_bar/ui/home/view/home.dart';
+import 'package:button_nav_bar/ui/discover/discover/discover.dart';
+import 'package:button_nav_bar/ui/profile/view/profile.dart';
 //import 'package:button_nav_bar/theme/colors.dart';
 import 'package:button_nav_bar/widgets/bottom_bar_items.dart';
 import 'package:flutter/material.dart';
@@ -20,25 +20,25 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
     {
       "icon": "assets/icons/home.svg",
       "active_icon": "assets/icons/home.svg",
-      "page": ActivityHome(),
+      "page": HomePage(),
       "title": ""
     },
     {
       "icon": "assets/icons/booking.svg",
       "active_icon": "assets/icons/booking.svg",
-      "page": Discovery(),
+      "page": ActivityHomePage(),
       "title": ""
     },
     {
-      "icon": "assets/icons/kesfet.svg",//navigation.svg
+      "icon": "assets/icons/kesfet.svg", //navigation.svg
       "active_icon": "assets/icons/kesfet.svg",
-      "page": KesvetPage(),
+      "page": DiscoverPage(),
       "title": ""
     },
     {
       "icon": "assets/icons/notification.svg",
       "active_icon": "assets/icons/notification.svg",
-      "page": Favorite(),
+      "page": CreateMeetingPage(),
       "title": ""
     },
     {
@@ -115,7 +115,7 @@ class _RootAppState extends State<RootApp> with TickerProviderStateMixin {
       height: 55,
       width: double.infinity,
       margin: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-      decoration:const BoxDecoration(
+      decoration: const BoxDecoration(
         //color: bottomBarColor,
         //color: const Color(0xFF5A60FF),
         color: Colors.white,

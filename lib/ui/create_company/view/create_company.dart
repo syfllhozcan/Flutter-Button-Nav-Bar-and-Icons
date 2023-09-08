@@ -3,18 +3,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class FirmaEkle extends StatefulWidget {
-  FirmaEkle({super.key});
+class CreateCompany extends StatefulWidget {
+  CreateCompany({super.key});
 
   @override
-  State<FirmaEkle> createState() => _FirmaEkleState();
+  State<CreateCompany> createState() => _CreateCompanyState();
 }
 
-class _FirmaEkleState extends State<FirmaEkle> {
+class _CreateCompanyState extends State<CreateCompany> {
   //TextEditingController _soyad = TextEditingController();
-  
-  String selectedValue = 'Organizasyon Türü';  // Başlangıçta seçili değer
- 
+
+  String selectedValue = 'Organizasyon Türü'; // Başlangıçta seçili değer
+
   List<String> dropdownValues = [
     'Organizasyon Türü',
     'Şahıs Şirketi',
@@ -91,7 +91,7 @@ class _FirmaEkleState extends State<FirmaEkle> {
             ),
             //-----------------------------İşletme Adı
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -155,7 +155,7 @@ class _FirmaEkleState extends State<FirmaEkle> {
             ),
             //-----------------------------Sektörler
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -265,7 +265,7 @@ class _FirmaEkleState extends State<FirmaEkle> {
             ),
             //-----------------------------Hakkında
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -329,7 +329,7 @@ class _FirmaEkleState extends State<FirmaEkle> {
             ),
             //-----------------------------Kurumsal Telefon
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -393,7 +393,7 @@ class _FirmaEkleState extends State<FirmaEkle> {
             ),
             //-----------------------------Kurumsal Mail
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -457,7 +457,7 @@ class _FirmaEkleState extends State<FirmaEkle> {
             ),
             //-----------------------------Konum Oluştur Search
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 8),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(children: [
                 const SizedBox(width: 10),
                 Expanded(
@@ -521,39 +521,40 @@ class _FirmaEkleState extends State<FirmaEkle> {
             ),
 
             //-----------------------------Onay Buttonu
-             InkWell(
+            InkWell(
               child: Container(
                 width: double.infinity,
-                padding:const EdgeInsets.all(15),
-                margin:const EdgeInsets.symmetric(horizontal: 20,vertical: 10,),
+                padding: const EdgeInsets.all(15),
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 10,
+                ),
                 decoration: BoxDecoration(
                   color: const Color(0xFF5A60FF),
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    blurRadius: 10,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
-                  ),
-                child:const Center(
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 10,
+                      offset: const Offset(0, 10),
+                    ),
+                  ],
+                ),
+                child: const Center(
                   child: Text(
                     'Oluştur',
                     style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold
-                    ),
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
             ),
-             //-----------------------------En Alt Boşluk
+            //-----------------------------En Alt Boşluk
             const SizedBox(
               height: 75,
             ),
-
           ],
         ),
       ),

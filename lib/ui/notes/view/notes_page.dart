@@ -1,4 +1,4 @@
-import 'package:button_nav_bar/ui/profil/view/profile.dart';
+import 'package:button_nav_bar/ui/profile/view/profile.dart';
 import 'package:button_nav_bar/widgets/box_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

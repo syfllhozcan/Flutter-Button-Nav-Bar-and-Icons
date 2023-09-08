@@ -3,15 +3,14 @@ import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 
-class Favorite extends StatefulWidget {
-  Favorite({super.key});
+class CreateMeetingPage extends StatefulWidget {
+  CreateMeetingPage({super.key});
 
   @override
-  State<Favorite> createState() => _FavoriteState();
+  State<CreateMeetingPage> createState() => _CreateMeetingPageState();
 }
 
-class _FavoriteState extends State<Favorite> {
-
+class _CreateMeetingPageState extends State<CreateMeetingPage> {
   String selectedToplanti = 'Toplantı'; // Başlangıçta seçili değer Toplantı
   String selectedYuzyuze = 'Yüzyüze'; // Başlangıçta seçili değer Yüzyüze
   List<String> dropdownToplanti = [
@@ -644,35 +643,35 @@ class _FavoriteState extends State<Favorite> {
             ),
 
             //-----------------------------Toplantı Onay Buttonu
-            /* InkWell(
+            InkWell(
               child: Container(
                 width: double.infinity,
-                padding:const EdgeInsets.all(15),
-                margin:const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.all(15),
+                margin: const EdgeInsets.symmetric(horizontal: 20),
                 decoration: BoxDecoration(
                   color: const Color(0xFF5A60FF),
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    blurRadius: 10,
-                    offset: const Offset(0, 10),
-                  ),
-                ],
-                  ),
-                child:const Center(
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 10,
+                      offset: const Offset(0, 10),
+                    ),
+                  ],
+                ),
+                child: const Center(
                   child: Text(
                     'Toplantıyı Oluştur',
                     style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold
-                    ),
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
             ),
-            */ //-----------------------------En Alt Boşluk
+
+            //-----------------------------En Alt Boşluk
             const SizedBox(
               height: 75,
             ),

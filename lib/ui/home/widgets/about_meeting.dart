@@ -1,4 +1,4 @@
-import 'package:button_nav_bar/ui/activity_home/widgets/social_media_space.dart';
+import 'package:button_nav_bar/ui/home/widgets/social_media_space.dart';
 import 'package:flutter/material.dart';
 
 class AboutMeeting extends StatelessWidget {

@@ -1,4 +1,4 @@
-import 'package:button_nav_bar/ui/profil/view/profile.dart';
+import 'package:button_nav_bar/ui/profile/view/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -53,12 +53,13 @@ class Meeting extends StatelessWidget {
           Container(
             height: 80,
             margin: const EdgeInsets.symmetric(
-              horizontal: 20,
+              horizontal: 0,
             ),
             //padding:const EdgeInsets.symmetric(vertical: 5),
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: 7,
+              padding: EdgeInsets.symmetric(horizontal: 5),
               itemBuilder: (context, index) => Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),

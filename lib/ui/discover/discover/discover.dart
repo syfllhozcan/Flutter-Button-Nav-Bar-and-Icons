@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class KesvetPage extends StatelessWidget {
-  const KesvetPage({super.key});
+class DiscoverPage extends StatelessWidget {
+  const DiscoverPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -60,8 +60,36 @@ class KesvetPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 0),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              decoration: BoxDecoration(
+                color: const Color(0xFF5A60FF),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Row(children: [
+                SvgPicture.asset(
+                  "assets/icons/cp.svg",
+                  height: 35,
+                  width: 35,
+                  color: Colors.white,
+                ),
+                Container(
+                  padding: const EdgeInsets.only(left: 10),
+                  width: MediaQuery.of(context).size.width - 95,
+                  child: AutoSizeText(
+                    "Tam sana göre olan etkinlikleri bulmak ve iş ağını geliştirmek için profilini zenginleştir.",
+                    maxFontSize: 14,
+                    maxLines: 2,
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                )
+              ]),
+            ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: Row(
                 children: [
                   Text(
@@ -83,14 +111,14 @@ class KesvetPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 240,
+              height: 230,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 5),
-                itemCount: 8,
+                itemCount: 10,
                 itemBuilder: (context, index) => Container(
-                  margin: const EdgeInsets.only(left: 10, bottom: 5, right: 10),
-                  width: 260,
+                  margin: const EdgeInsets.only(left: 10, bottom: 0, right: 10),
+                  width: 250,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
@@ -205,12 +233,12 @@ class KesvetPage extends StatelessWidget {
               child: ListView.builder(
                 scrollDirection: Axis.vertical,
                 padding: const EdgeInsets.symmetric(horizontal: 15),
-                itemCount: 8,
+                itemCount: 10,
                 itemBuilder: (context, index) => Container(
                   padding: const EdgeInsets.all(10),
-                  width: 86,
+                  //width: 85,
                   margin: const EdgeInsets.only(left: 0, bottom: 15, right: 0),
-                  height: 100,
+                  height: 95,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
@@ -225,7 +253,7 @@ class KesvetPage extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        width: 90,
+                        width: 85,
                         decoration: BoxDecoration(
                           color: const Color(0xffd6d8fe),
                           borderRadius: BorderRadius.circular(10),

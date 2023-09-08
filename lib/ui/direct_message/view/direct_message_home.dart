@@ -40,7 +40,54 @@ class _DirectMessageHomePageState extends State<DirectMessageHomePage> {
     final theme = Theme.of(context);
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      extendBody: false,
+      /*floatingActionButton: const Stack(
+        children: <Widget>[
+          //padding: EdgeInsets.only(left: 31),
+          Positioned(
+            bottom: 10,
+            right: 0,
+            //alignment: Alignment.bottomRight,
+            child: FloatingActionButton(
+              backgroundColor: Color(0xFF5A60FF),
+              onPressed: null,
+              child: Icon(Icons.camera_alt_outlined),
+            ),
+          ),
+          Positioned(
+            bottom: 80,
+            right: 0,
+            //alignment: Alignment.bottomRight,
+            child: FloatingActionButton(
+              backgroundColor: Color(0xFF5A60FF),
+              onPressed: null,
+              child: Icon(Icons.attach_file_outlined),
+            ),
+          ),
+          Positioned(
+            bottom: 220,
+            right: 0,
+            //alignment: Alignment.bottomRight,
+            child: FloatingActionButton(
+              backgroundColor: Color(0xFF5A60FF),
+              onPressed: null,
+              child: Icon(Icons.mic),
+            ),
+          ),
+       
+          Positioned(
+            bottom: 150,
+            right: 0,
+            //alignment: Alignment.bottomRight,
+            child: FloatingActionButton(
+              backgroundColor: Color(0xFF5A60FF),
+              onPressed: null,
+              child: Icon(Icons.insert_photo_outlined),
+            ),
+          ),
+        ],
+      ),
+      */
+       extendBody: false,
       floatingActionButton: SpeedDial(
         animatedIcon: AnimatedIcons.menu_close,
         backgroundColor: Colors.black,
@@ -55,7 +102,7 @@ class _DirectMessageHomePageState extends State<DirectMessageHomePage> {
               width: 20,
               color: Colors.white,
             ),
-            label: 'Fotoğraf',
+            //label: 'Fotoğraf',
             backgroundColor:const Color(0xFF5A60FF),
             //backgroundColor: const Color(0xffe8daef),
           ),
@@ -66,7 +113,7 @@ class _DirectMessageHomePageState extends State<DirectMessageHomePage> {
               width: 20,
               color: Colors.white,
             ),
-            label: 'Dosya',
+            //label: 'Dosya',
             backgroundColor:const Color(0xFF5A60FF),
             //backgroundColor: const Color(0xffd5f5e3),
           ),
@@ -77,7 +124,7 @@ class _DirectMessageHomePageState extends State<DirectMessageHomePage> {
               width: 20,
               color: Colors.white,
             ),
-            label: 'Ses',
+            //label: 'Ses',
             backgroundColor:const Color(0xFF5A60FF),
             //backgroundColor: const Color(0xffd6eaf8),
           ),
@@ -88,12 +135,13 @@ class _DirectMessageHomePageState extends State<DirectMessageHomePage> {
               width: 20,
               color: Colors.white,
             ),
-            label: 'Metin',
+            //label: 'Metin',
             backgroundColor:const Color(0xFF5A60FF),
             //backgroundColor: const Color(0xfffcf3cf),
           ),
         ],
       ),
+      
       backgroundColor: const Color(0xfff1f1f1),
       appBar: AppBar(
         backgroundColor: const Color(0xfff1f1f1),
@@ -337,6 +385,9 @@ class _DirectMessageHomePageState extends State<DirectMessageHomePage> {
               ],
             ),
           ),
+          
+          
+          
           const SizedBox(height: 20),
           const Center(
             child: Text(

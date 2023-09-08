@@ -1,8 +1,15 @@
+import 'package:button_nav_bar/ui/activity_home/view/activity_home.dart';
+import 'package:button_nav_bar/ui/create_meeting/view/create_meeting.dart';
+import 'package:button_nav_bar/ui/create_company/view/create_company.dart';
+import 'package:button_nav_bar/ui/profile_company/view/profile_company.dart';
+import 'package:button_nav_bar/ui/join_meeting/view/join_meeting.dart';
+import 'package:button_nav_bar/ui/discover/discover/discover.dart';
+import 'package:button_nav_bar/ui/anasayfa/view/anasyfa.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class Anasayfa extends StatelessWidget {
-  const Anasayfa({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +19,7 @@ class Anasayfa extends StatelessWidget {
         backgroundColor: const Color(0xfff1f1f1),
         title: Image.asset(
           "assets/images/logo_beetinq.png",
-          height: 28,
+          height: 25,
           fit: BoxFit.cover,
         ),
         centerTitle: true,
@@ -24,18 +31,19 @@ class Anasayfa extends StatelessWidget {
           child: const Icon(
             Icons.arrow_back_ios_sharp,
             color: Colors.black87,
-            size: 18,
+            size: 23,
           ),
         ),
         actions: [
           InkWell(
-            child: SvgPicture.asset(
-              "assets/icons/menu2.svg",
-              height: 18,
-              width: 18,
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                vertical: 18,
+                horizontal: 20,
+              ),
+              child: SvgPicture.asset("assets/icons/menu2.svg"),
             ),
-          ),
-          const SizedBox(width: 20),
+          )
         ],
       ),
       body: Column(
@@ -83,302 +91,357 @@ class Anasayfa extends StatelessWidget {
                     ),
                     child: Column(
                       children: [
-                        Container(
-                          color: Colors.white,
-                          padding: const EdgeInsets.all(0),
-                          margin: const EdgeInsets.symmetric(
-                              horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: const Color(0xffE8DAEF),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: SvgPicture.asset(
-                                "assets/icons/filter1.svg",
-                                height: 20,
-                                width: 20,
-                              ),
+                        InkWell(
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => Anasayfa(),
                             ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Kontrol Paneli',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
+                          ),
+                          child: Container(
+                            color: Colors.white,
+                            padding: const EdgeInsets.all(0),
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: const Color(0xffE8DAEF),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/filter1.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                            )
-                          ]),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Kontrol Paneli',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(0),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: Color(0xffD5F5E3),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: SvgPicture.asset(
-                                "assets/icons/notification1.svg",
-                                height: 20,
-                                width: 20,
-                              ),
+                        InkWell(
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => FirmaProfil(),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Duyurular',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
+                          ),
+                          child: Container(
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0),
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: Color(0xffD5F5E3),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/notification1.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                            )
-                          ]),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Duyurular',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(0),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: Color(0xffD6EAF8),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: SvgPicture.asset(
-                                "assets/icons/event.svg",
-                                height: 20,
-                                width: 20,
-                              ),
+                        InkWell(
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => CreateCompany(),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Etkinlik Programı',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
+                          ),
+                          child: Container(
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0),
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: Color(0xffD6EAF8),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/event.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                            )
-                          ]),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Etkinlik Programı',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(0),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: Color(0xffFCF3CF),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: SvgPicture.asset(
-                                "assets/icons/edit.svg",
-                                height: 20,
-                                width: 20,
-                              ),
+                        InkWell(
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => JoinMeeting(),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Etkinlik Notlarım',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
+                          ),
+                          child: Container(
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0),
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: Color(0xffFCF3CF),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/edit.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                            )
-                          ]),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Etkinlik Notlarım',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(0),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: Color(0xffF2D7D5),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: SvgPicture.asset(
-                                "assets/icons/handshake2.svg",
-                                height: 20,
-                                width: 20,
-                              ),
+                        InkWell(
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => DiscoverPage(),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Görüşmelerim',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
+                          ),
+                          child: Container(
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0),
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: Color(0xffF2D7D5),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/handshake2.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                            )
-                          ]),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Görüşmelerim',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(0),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: Color(0xffD5F5E3),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: SvgPicture.asset(
-                                "assets/icons/support.svg",
-                                height: 20,
-                                width: 20,
-                              ),
+                        InkWell(
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => ActivityHomePage(),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Destek',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
+                          ),
+                          child: Container(
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0),
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: Color(0xffD5F5E3),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/support.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                            )
-                          ]),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Destek',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(0),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: Color(0xffFCF3CF),
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                              child: SvgPicture.asset(
-                                "assets/icons/operation-and-maintenance-center-execution-record-svgrepo-com.svg",
-                                height: 20,
-                                width: 20,
-                              ),
+                        InkWell(
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => CreateMeetingPage(),
                             ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Anket',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
+                          ),
+                          child: Container(
+                            color: Colors.white,
+                            padding: const EdgeInsets.all(0),
+                            margin: const EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: Color(0xffFCF3CF),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/operation-and-maintenance-center-execution-record-svgrepo-com.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                            )
-                          ]),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'Anket',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(0),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: Color(0xffE8DAEF),
-                                borderRadius: BorderRadius.circular(5),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0),
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: Color(0xffE8DAEF),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/firma.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                              child: SvgPicture.asset(
-                                "assets/icons/firma.svg",
-                                height: 20,
-                                width: 20,
+                              SizedBox(
+                                width: 10,
                               ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Firmalar',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
-                              ),
-                            )
-                          ]),
+                              Text(
+                                'Firmalar',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
-                        Container(
-                          color: Colors.white,
-                          padding: EdgeInsets.all(0),
-                          margin:
-                              EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-                          child: Row(children: [
-                            Container(
-                              padding: const EdgeInsets.all(10),
-                              margin: const EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 5),
-                              decoration: BoxDecoration(
-                                //color: Colors.white,
-                                color: Color(0xffD6EAF8),
-                                borderRadius: BorderRadius.circular(5),
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            color: Colors.white,
+                            padding: EdgeInsets.all(0),
+                            margin: EdgeInsets.symmetric(
+                                horizontal: 0, vertical: 0),
+                            child: Row(children: [
+                              Container(
+                                padding: const EdgeInsets.all(10),
+                                margin: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 5),
+                                decoration: BoxDecoration(
+                                  //color: Colors.white,
+                                  color: Color(0xffD6EAF8),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: SvgPicture.asset(
+                                  "assets/icons/person1.svg",
+                                  height: 20,
+                                  width: 20,
+                                ),
                               ),
-                              child: SvgPicture.asset(
-                                "assets/icons/person1.svg",
-                                height: 20,
-                                width: 20,
+                              SizedBox(
+                                width: 10,
                               ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Katılımcılar',
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.black87,
-                              ),
-                            )
-                          ]),
+                              Text(
+                                'Katılımcılar',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.black87,
+                                ),
+                              )
+                            ]),
+                          ),
                         ),
                       ],
                     )),
@@ -672,7 +735,7 @@ class Anasayfa extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5),
                             ),
                             child: SvgPicture.asset(
-                              "assets/icons/setting-border.svg",
+                              "assets/icons/setting-border1.svg",
                               height: 20,
                               width: 20,
                             ),
